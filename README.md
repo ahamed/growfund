@@ -123,3 +123,7 @@ This project is licensed under the GPLv2 or later - see the plugin header for de
 ---
 
 **Note**: This README provides basic installation instructions. For comprehensive development documentation, architecture details, and API reference, please refer to the [Developer Guide](docs/DEVELOPER_GUIDE.md).
+
+
+### Changes
+- Change 1
