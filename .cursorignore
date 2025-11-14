@@ -1,0 +1,11 @@
+# Add directories or file patterns to ignore during indexing (e.g. foo/ or *.csv)
+
+node_modules
+
+# Cursor
+.cursorrules
+.cursorignore
+
+# WordPress
+wordpress/wp-content/plugins/growfund/node_modules
+wordpress/wp-content/plugins/growfund/vendor

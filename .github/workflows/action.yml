@@ -1,0 +1,87 @@
+name: Sync Free Subset
+
+on:
+  push:
+    branches:
+      - split/free-subset
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-free:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Growfund Pro repository
+        uses: actions/checkout@v4
+        with:
+          path: growfund-pro
+          fetch-depth: 0
+          persist-credentials: false
+      
+      - name: Checkout to Growfund Free repository
+        uses: actions/checkout@v4
+        with:
+          repository: ahamed/growfund
+          token: ${{ secrets.GROWFUND_SYNC_TOKEN_PRO }}
+          path: growfund-free
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Create target branch
+        run: |
+          cd growfund-free
+
+          if git show-ref --verify --quiet "refs/heads/target/free-only"; then
+            git checkout target/free-only
+          else
+            git checkout -b target/free-only origin/main
+          fi
+
+      - name: Sync files from pro -> free
+        run: |
+          rsync -av --delete \
+            --exclude=".git" \
+            growfund-pro/ \
+            growfund-free/
+          
+          if [ -f .growfundignore ]; then
+            cat .growfundignore | xargs rm -rf || true
+          fi
+
+      - name: Sync config files from free-config -> free
+        run: |
+          cd growfund-free
+          mv free-config/free.gitignore .gitignore || true
+          mv free-config/package.json apps/package.json || true
+          mv free-config/docker-compose.yml docker-compose.yml || true
+          mv free-config/README.md README.md || true
+          rm -rf free-config || true
+
+      - name: Commit and push changes to new branch
+        env:
+          GH_TOKEN: ${{ secrets.GROWFUND_SYNC_TOKEN_PRO }}
+        run: |
+          cd growfund-free
+          git config user.name "growfund-sync-bot"
+          git config user.email "growfund-sync-bot@growfund.com"
+          git add -A
+          git commit -m "Sync growfund free subset"
+
+          git remote set-url origin "https://oauth2:${GH_TOKEN}@github.com/ahamed/growfund.git"
+          git push origin target/free-only
+
+      - name: Create pull request
+        env:
+          GH_TOKEN: ${{ secrets.GROWFUND_SYNC_TOKEN_PRO }}
+        run: |
+          cd growfund-free
+          gh pr create \
+            --repo ahamed/growfund \
+            --head target/free-only \
+            --base main \
+            --title "Sync growfund free subset" \
+            --body "This pull request is automatically created by the sync workflow!"
