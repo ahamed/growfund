@@ -20,6 +20,9 @@ release_notes.md
 *.swp
 *.swo
 
+# Free config files
+free-config/
+
 # Logs and databases
 *.log
 *.sql

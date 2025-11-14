@@ -88,7 +88,7 @@ define('GF_BASENAME', plugin_basename(__FILE__));
  * Available values - development|production
  * @since   1.0.0
  */
-define('GF_ENV_MODE', 'production');
+define('GF_ENV_MODE', 'development');
 
 /**
  * Define plugin prefix
