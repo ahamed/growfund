@@ -1,0 +1,320 @@
+.gf-page-container .gf-pledge-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+  --transition-duration: 0.3s;
+}
+
+.gf-page-container .gf-pledge-modal.is-open {
+  display: block;
+}
+
+.gf-page-container .gf-pledge-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease-in-out;
+}
+
+.gf-page-container .gf-pledge-modal.is-open .gf-pledge-modal__overlay {
+  opacity: 1;
+}
+
+.gf-page-container .gf-pledge-modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 90%;
+  max-width: 819px;
+  max-height: 90vh;
+  padding: var(--gf-spacing-4);
+  background-color: var(--gf-gray-4);
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-duration) ease-in-out, opacity var(--transition-duration) ease-in-out;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--gf-font-size-3);
+  line-height: 21px;
+}
+
+.gf-page-container .gf-pledge-modal.is-open .gf-pledge-modal__content {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.gf-page-container .gf-pledge-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--gf-spacing-4);
+  border-bottom: 1px solid var(--gf-gray-8);
+}
+
+.gf-page-container .gf-pledge-modal__header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-3);
+}
+
+.gf-page-container .gf-pledge-modal__icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--gf-primary);
+}
+
+.gf-page-container .gf-pledge-modal__title {
+  font-size: var(--gf-font-size-4);
+  font-weight: var(--gf-font-weight-semibold);
+  line-height: 20px;
+  color: var(--gf-gray-15);
+}
+
+.gf-page-container .gf-pledge-modal__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--gf-spacing-2);
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.gf-page-container .gf-pledge-modal__close:hover {
+  background-color: var(--gf-gray-8);
+}
+
+.gf-page-container .gf-pledge-modal__close svg {
+  width: 20px;
+  height: 20px;
+  color: var(--gf-gray-3);
+}
+
+.gf-page-container .gf-pledge-modal__body {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: var(--gf-spacing-4);
+  max-height: calc(90vh - 120px);
+}
+
+/* Account for header and padding */
+.gf-page-container .gf-pledge-modal__section {
+  margin-bottom: var(--gf-spacing-8);
+}
+
+.gf-page-container .gf-pledge-modal__section:last-child {
+  margin-top: var(--gf-spacing-4);
+}
+
+/* Available rewards section specific styles */
+.gf-page-container .gf-available-rewards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+  /* Allow flex child to shrink */
+.gf-page-container .gf-available-rewards .gf-pledge-section__title {
+  flex-shrink: 0;
+}
+
+/* Keep title visible */
+.gf-page-container .gf-pledge-section__title {
+  font-size: var(--gf-font-size-5);
+  line-height: 24px;
+  font-weight: var(--gf-font-weight-semibold);
+  margin-bottom: var(--gf-spacing-4);
+  color: var(--gf-gray-15);
+}
+
+/* Pledge without reward section */
+.gf-page-container .gf-pledge-without-reward {
+  background-color: var(--gf-gray-1);
+  padding: var(--gf-spacing-4);
+  border-radius: 12px;
+  border: 1px solid var(--gf-gray-8);
+}
+
+.gf-page-container .gf-pledge-form__label {
+  display: block;
+  font-size: var(--gf-font-size-3);
+  font-weight: 500;
+  margin-bottom: var(--gf-spacing-3);
+  color: var(--gf-gray-2);
+}
+
+.gf-page-container .gf-pledge-input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-4);
+  position: relative;
+}
+
+.gf-page-container .gf-pledge-currency {
+  position: absolute;
+  left: var(--gf-spacing-4);
+  font-weight: 500;
+  color: var(--gf-gray-3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gf-page-container .gf-pledge-btn {
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.gf-page-container .gf-pledge-rewards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gf-spacing-4);
+  flex: 1;
+  overflow-y: auto;
+  padding-right: var(--gf-spacing-2);
+  min-height: 0;
+}
+
+/* Allow flex child to shrink */
+.gf-page-container .gf-pledge-input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-4);
+}
+
+.gf-page-container .gf-pledge-input-group .gf-amount-input {
+  flex: 1 1 61%;
+}
+
+.gf-page-container .gf-pledge-input-group .gf-pledge-btn {
+  flex: 1 1 39%;
+}
+
+/* Scrollbar styling for webkit browsers */
+.gf-page-container .gf-pledge-modal__body::-webkit-scrollbar,
+.gf-page-container .gf-pledge-rewards-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gf-page-container .gf-pledge-modal__body::-webkit-scrollbar-track,
+.gf-page-container .gf-pledge-rewards-list::-webkit-scrollbar-track {
+  background: var(--gf-gray-9);
+  border-radius: 3px;
+}
+
+.gf-page-container .gf-pledge-modal__body::-webkit-scrollbar-thumb,
+.gf-page-container .gf-pledge-rewards-list::-webkit-scrollbar-thumb {
+  background: var(--gf-gray-6);
+  border-radius: 3px;
+}
+
+.gf-page-container .gf-pledge-modal__body::-webkit-scrollbar-thumb:hover,
+.gf-page-container .gf-pledge-rewards-list::-webkit-scrollbar-thumb:hover {
+  background: var(--gf-gray-5);
+}
+
+/* Animation for entering/leaving */
+.gf-page-container .gf-pledge-modal {
+  animation-duration: var(--transition-duration);
+  animation-fill-mode: both;
+}
+
+.gf-page-container .gf-pledge-modal.is-open {
+  animation-name: pledgeModalFadeIn;
+}
+
+.gf-page-container .gf-pledge-modal.is-closing {
+  animation-name: pledgeModalFadeOut;
+}
+
+@keyframes pledgeModalFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pledgeModalFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.gf-page-container .gf-pledge-modal__content:focus {
+  outline: none;
+}
+
+.gf-page-container .gf-pledge-modal__close:focus {
+  outline: 2px solid var(--gf-primary);
+  outline-offset: 2px;
+}
+
+.gf-page-container .gf-pledge-amount-input:focus {
+  border-color: var(--gf-primary);
+  box-shadow: 0 0 0 3px rgba(var(--gf-primary-rgb));
+}
+
+.gf-page-container .gf-pledge-input-hint {
+  font-size: var(--gf-font-size-2);
+  margin-top: var(--gf-spacing-2);
+}
+
+/* Update pledge button text dynamically */
+.gf-page-container .gf-pledge-btn[data-amount] {
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 1023px) {
+  .gf-page-container .gf-pledge-modal__content {
+    padding: var(--gf-spacing-4);
+    max-height: 90vh;
+  }
+
+  .gf-page-container .gf-pledge-modal__header {
+    padding-bottom: var(--gf-spacing-4);
+    margin-bottom: var(--gf-spacing-4);
+  }
+
+  .gf-page-container .gf-pledge-without-reward {
+    padding: var(--gf-spacing-4);
+  }
+
+  .gf-page-container .gf-pledge-section__title {
+    font-size: var(--gf-font-size-4);
+    line-height: 20px;
+  }
+
+  .gf-page-container .gf-pledge-rewards-list {
+    gap: var(--gf-spacing-3);
+  }
+
+  .gf-page-container .gf-pledge-modal__body {
+    max-height: calc(90vh - 140px);
+  }
+  
+  /* Adjusted for mobile */
+  .gf-page-container .gf-pledge-rewards-list .gf-campaign-reward--pledge {
+    padding: 0;
+  }
+
+  .gf-page-container .gf-pledge-input-group {
+    flex-direction: column;
+    gap: var(--gf-spacing-3);
+  }
+}

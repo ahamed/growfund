@@ -1,0 +1,100 @@
+.gf-page-container .gf-donation-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Alternative layout for donation list */
+.gf-page-container .gf-donation-list .gf-donation-item {
+  gap: var(--gf-spacing-3);
+  padding: 0 0 var(--gf-spacing-6) 0;
+  border-radius: 0;
+}
+
+.gf-page-container .gf-donation-item__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gf-gray-1);
+  border-radius: 8px;
+}
+
+.gf-page-container .gf-donation-item__icon .gf-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.gf-page-container .gf-donation-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.gf-page-container .gf-donation-item__donor {
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Alternative styling for donation list */
+.gf-page-container .gf-donation-list .gf-donation-item__donor {
+  color: var(--gf-gray-15);
+  line-height: 122%;
+  font-size: var(--gf-font-size-4);
+  margin-bottom: 0;
+}
+
+.gf-page-container .gf-donation-item__details {
+  font-size: 14px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Alternative styling for donation list */
+.gf-page-container .gf-donation-list .gf-donation-item__details {
+  margin-top: var(--gf-spacing-1);
+  font-size: var(--gf-font-size-3);
+  color: var(--gf-accent-dark);
+}
+
+.gf-page-container .gf-donation-item__separator {
+  color: #9ca3af;
+}
+
+/* Modal variant */
+.gf-page-container .gf-donation-item--modal .gf-donation-item__icon {
+  background-color: var(--gf-accent) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .gf-page-container .gf-donation-item {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .gf-page-container .gf-donation-item__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .gf-page-container .gf-donation-item__donor {
+    font-size: 14px;
+  }
+
+  .gf-page-container .gf-donation-item__details {
+    font-size: 13px;
+  }
+}

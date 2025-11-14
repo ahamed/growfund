@@ -1,0 +1,63 @@
+name: Sync to Growfund Pro
+
+on:
+  push:
+    branches:
+      - sync/to-growfund-pro
+
+jobs:
+  sync-to-pro:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Growfund Pro
+        uses: actions/checkout@v4
+        with:
+          repository: ahamed/growfund-pro
+          token: ${{ secrets.GROWFUND_SYNC_TOKEN_FREE }}
+          path: growfund-pro
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Add Growfund Free repo as remote
+        run: |
+          cd growfund-pro
+          git remote add free https://github.com/ahamed/growfund.git
+          git fetch free sync/to-growfund-pro
+
+      - name: Merge free into pro
+        run: |
+          cd growfund-pro
+
+          git config user.name "growfund-sync-bot"
+          git config user.email "growfund-sync-bot@growfund.com"
+
+          git checkout -b target/to-growfund-pro
+
+          # Merge free branch, keep pro-only files intact
+          git merge free/sync/to-growfund-pro --allow-unrelated-histories -X theirs
+
+          # Remove pro-ignored files if any
+          if [ -f .growfundignore ]; then
+            cat .growfundignore | xargs rm -rf || true
+          fi
+
+      - name: Push sync branch
+        env:
+          GH_TOKEN: ${{ secrets.GROWFUND_SYNC_TOKEN_FREE }}
+        run: |
+          cd growfund-pro
+          git remote set-url origin "https://oauth2:${GH_TOKEN}@github.com/ahamed/growfund-pro.git"
+          git push origin target/to-growfund-pro
+
+      - name: Create pull request
+        env:
+          GH_TOKEN: ${{ secrets.GROWFUND_SYNC_TOKEN_FREE }}
+        run: |
+          cd growfund-pro
+          gh pr create \
+            --repo ahamed/growfund-pro \
+            --head target/to-growfund-pro \
+            --base main \
+            --title "Sync to Growfund Pro ($GITHUB_SHA)" \
+            --body "This PR syncs all changes from Growfund Free to Growfund Pro."

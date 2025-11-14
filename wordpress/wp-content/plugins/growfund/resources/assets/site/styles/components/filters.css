@@ -1,0 +1,116 @@
+.gf-page-container .gf-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gf-page-container .gf-filters__left {
+  max-width: 716px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gf-spacing-4);
+  flex: 1;
+  min-width: 0;
+}
+
+.gf-page-container .gf-filters__search-field {
+  width: 100%;
+}
+
+.gf-page-container .gf-filters__main-search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gf-spacing-4);
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+}
+
+.gf-page-container .gf-filters__search-wrapper {
+  flex: 2;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.gf-page-container .gf-filters__category,
+.gf-page-container .gf-filters__location {
+  flex: 1;
+  min-width: 120px;
+  max-width: 200px;
+}
+
+.gf-page-container .gf-filters__right {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.gf-page-container .gf-filters__sort {
+  min-width: 146px;
+}
+
+.gf-page-container .gf-filters__clear-all {
+  display: flex;
+  align-items: center;
+  font-size: var(--gf-font-size-3);
+  line-height: 21px;
+  color: var(--gf-gray-15);
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .gf-page-container .gf-filters {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .gf-page-container .gf-filters__clear-all {
+    display: none;
+  }
+
+  .gf-page-container .gf-filters__left {
+    width: 100%;
+  }
+
+  .gf-page-container .gf-filters__category,
+  .gf-page-container .gf-filters__location,
+  .gf-page-container .gf-filters__sort {
+    display: none;
+  }
+
+  .gf-page-container .gf-filters__main-search {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .gf-page-container .gf-filters__search-wrapper {
+    display: flex;
+    gap: var(--gf-spacing-4);
+    width: 100%;
+    flex: 1 1 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .gf-page-container .gf-filters__search-form {
+    flex: 1;
+  }
+
+  .gf-page-container .gf-filters__mobile-trigger {
+    flex-shrink: 0;
+  }
+
+  .gf-page-container .gf-filters__category,
+  .gf-page-container .gf-filters__location {
+    flex: 1 1 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .gf-page-container .gf-filters__right {
+    width: 100%;
+  }
+}

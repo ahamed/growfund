@@ -1,0 +1,415 @@
+.gf-page-container .gf-input {
+  width: 100%;
+  padding: var(--gf-spacing-3);
+  border: 1px solid var(--gf-gray-8);
+  border-radius: var(--gf-radius-3);
+  font-size: var(--gf-font-size-3);
+  line-height: 21px;
+  background-color: var(--gf-gray-1);
+  color: var(--gf-gray-16);
+  transition: all 0.2s ease;
+  height: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+}
+
+.gf-page-container .gf-input:focus {
+  outline: none;
+  border-color: var(--gf-blue-3);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.gf-page-container .gf-input::placeholder {
+  color: var(--gf-gray-12);
+  font-size: var(--gf-font-size-3);
+  line-height: 21px;
+}
+
+.gf-page-container .gf-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--gf-gray-4);
+}
+
+/* Checkbox Styles - Updated to match admin site design */
+.gf-page-container .gf-input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--gf-gray-8);
+  border-radius: 3px;
+  background-color: var(--gf-gray-1);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  flex-shrink: 0;
+  max-height: 16px;
+  box-sizing: border-box;
+}
+
+.gf-page-container .gf-input[type='checkbox']::-webkit-input-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+/* Checkbox focus state */
+.gf-page-container .gf-input[type='checkbox']:focus {
+  outline: none;
+  border-color: var(--gf-green-4);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Checkbox checked state */
+.gf-page-container .gf-input[type='checkbox']:checked {
+  border-color: var(--gf-green-4);
+  background-color: var(--gf-green-4);
+}
+
+/* Checkbox checked indicator (checkmark) */
+.gf-page-container .gf-input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 4px;
+  height: 8px;
+  border: 2px solid var(--gf-gray-1);
+  border-top: none;
+  border-left: none;
+}
+
+/* Checkbox hover state */
+.gf-page-container .gf-input[type='checkbox']:hover:not(:checked) {
+  border-color: var(--gf-gray-10);
+}
+
+/* Checkbox disabled state */
+.gf-page-container .gf-input[type='checkbox']:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--gf-gray-4);
+}
+
+/* Radio Button Styles - Updated to match admin site design */
+.gf-page-container .gf-input[type='checkbox'],
+.gf-page-container .gf-input[type='radio'] {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--gf-gray-8);
+  border-radius: 3px;
+  background-color: var(--gf-gray-1);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  max-height: 16px;
+  box-sizing: border-box;
+}
+
+.gf-page-container .gf-input[type='radio'] {
+  border-radius: 50%;
+}
+
+/* Radio button focus state */
+.gf-page-container .gf-input[type='radio']:focus {
+  outline: none;
+  border-color: var(--gf-green-4);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Radio button checked state */
+.gf-page-container .gf-input[type='radio']:checked {
+  border-color: var(--gf-green-4);
+  background-color: var(--gf-gray-1);
+}
+
+/* Radio button checked indicator */
+.gf-page-container .gf-input[type='radio']:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--gf-green-4);
+  border: none;
+}
+
+/* Radio button hover state */
+.gf-page-container .gf-input[type='radio']:hover:not(:checked) {
+  border-color: var(--gf-gray-10);
+}
+
+/* Radio button disabled state */
+.gf-page-container .gf-input[type='radio']:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--gf-gray-4);
+}
+
+/* Input States */
+.gf-page-container .gf-input.gf-input--error {
+  border-color: var(--gf-red-6);
+}
+
+.gf-page-container .gf-input.gf-input--error:focus {
+  border-color: var(--gf-red-6);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.gf-page-container .gf-input.gf-input--success {
+  border-color: var(--gf-green-6);
+}
+
+.gf-page-container .gf-input.gf-input--success:focus {
+  border-color: var(--gf-green-6);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* Size Variants */
+.gf-page-container .gf-input--sm {
+  padding: var(--gf-spacing-1) var(--gf-spacing-3);
+  font-size: var(--gf-font-size-xs);
+  height: 32px;
+  max-height: 32px;
+  box-sizing: border-box;
+}
+
+.gf-page-container .gf-input--lg {
+  padding: var(--gf-spacing-3) var(--gf-spacing-5);
+  font-size: var(--gf-font-size-base);
+  height: 48px;
+  max-height: 48px;
+  box-sizing: border-box;
+}
+
+/* Simple amount input variant - displays currency inline like "$4.00" */
+.gf-page-container .gf-simple-amount-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--gf-gray-8);
+  border-radius: var(--gf-radius-3);
+  background-color: var(--gf-gray-1);
+  padding: 0;
+  width: auto;
+  min-width: 6em;
+  transition: all 0.2s ease;
+}
+
+.gf-page-container .gf-simple-amount-input:focus-within {
+  outline: none;
+  border-color: var(--gf-blue-3);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.gf-page-container .gf-simple-currency {
+  color: var(--gf-gray-16);
+  font-size: var(--gf-font-size-3);
+  line-height: 21px;
+  font-weight: var(--gf-font-weight-medium);
+  padding-left: var(--gf-spacing-3);
+  flex-shrink: 0;
+}
+
+.gf-page-container .gf-simple-amount-input .gf-input-simple {
+  border: none;
+  background: transparent;
+  padding: var(--gf-spacing-2) var(--gf-spacing-3) var(--gf-spacing-2) 0;
+  width: auto;
+  min-width: 3em;
+  flex: 1;
+  height: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+}
+
+.gf-page-container .gf-simple-amount-input .gf-input-simple:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Password Toggle Styles */
+.gf-page-container .gf-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gf-page-container .gf-password-wrapper .gf-input {
+  padding-right: 40px;
+}
+
+/* Make room for the toggle button */
+.gf-page-container .gf-password-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--gf-gray-12);
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gf-page-container .gf-password-toggle:hover {
+  color: var(--gf-gray-16);
+  background-color: var(--gf-gray-4);
+}
+
+.gf-page-container .gf-password-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Password toggle icon visibility */
+.gf-page-container .gf-password-icon--visible {
+  display: none;
+}
+
+.gf-page-container .gf-password-wrapper.show-password .gf-password-icon--hidden {
+  display: none;
+}
+
+.gf-page-container .gf-password-wrapper.show-password .gf-password-icon--visible {
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+
+  /* =========================================
+   FORM LAYOUT ENHANCEMENTS
+   ========================================= */
+  /* Checkbox and radio button form field layouts */
+  .gf-page-container .gf-input-group {
+    padding: var(--gf-spacing-4);
+  }
+
+.gf-page-container .gf-search-input {
+    font-size: var(--gf-font-size-4);
+    padding: var(--gf-spacing-4);
+  }
+
+.gf-page-container .gf-search-btn {
+    padding: var(--gf-spacing-2);
+  }
+}
+
+.gf-page-container .gf-form-field input[type='checkbox'],
+.gf-page-container .gf-form-field input[type='radio'] {
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+/* Label styling for checkbox and radio fields */
+.gf-page-container .gf-form-field input[type='checkbox']+label,
+.gf-page-container .gf-form-field input[type='radio']+label {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--gf-font-size-3);
+  font-weight: var(--gf-font-weight-medium);
+  color: var(--gf-gray-15);
+  cursor: pointer;
+  padding: var(--gf-spacing-2) 0;
+  transition: color 0.2s ease;
+  margin-bottom: 0;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+
+.gf-page-container .gf-form-field input[type='checkbox']+label:hover,
+.gf-page-container .gf-form-field input[type='radio']+label:hover {
+  color: var(--gf-gray-16);
+}
+
+.gf-page-container .gf-form-field input[type='checkbox']:focus+label,
+.gf-page-container .gf-form-field input[type='radio']:focus+label {
+  color: var(--gf-gray-16);
+}
+
+/* Checkbox and radio button group layouts */
+.gf-page-container .gf-checkbox-group,
+.gf-page-container .gf-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gf-spacing-2);
+  margin-bottom: var(--gf-spacing-3);
+}
+
+.gf-page-container .gf-checkbox-group .gf-form-field,
+.gf-page-container .gf-radio-group .gf-form-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--gf-spacing-2);
+}
+
+.gf-page-container .gf-checkbox-group .gf-form-field:last-child,
+.gf-page-container .gf-radio-group .gf-form-field:last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal layout for checkbox/radio groups */
+.gf-page-container .gf-checkbox-group--horizontal,
+.gf-page-container .gf-radio-group--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--gf-spacing-4);
+}
+
+.gf-page-container .gf-checkbox-group--horizontal .gf-form-field,
+.gf-page-container .gf-radio-group--horizontal .gf-form-field {
+  margin-bottom: 0;
+  min-width: 200px;
+}
+
+/* Focus ring for accessibility */
+.gf-page-container .gf-form-field input[type='checkbox']:focus,
+.gf-page-container .gf-form-field input[type='radio']:focus {
+  outline: none;
+}
+
+.gf-page-container .gf-form-field input[type='checkbox']:focus-visible,
+.gf-page-container .gf-form-field input[type='radio']:focus-visible {
+  outline: 2px solid var(--gf-green-4);
+  outline-offset: 2px;
+}
+
+/* Error states for checkbox and radio fields */
+.gf-page-container .gf-form-field--error input[type='checkbox'],
+.gf-page-container .gf-form-field--error input[type='radio'] {
+  border-color: var(--gf-red-3);
+}
+
+.gf-page-container .gf-form-field--error input[type='checkbox']:focus,
+.gf-page-container .gf-form-field--error input[type='radio']:focus {
+  border-color: var(--gf-red-3);
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+}
+
+/* Success states for checkbox and radio fields */
+.gf-page-container .gf-form-field--success input[type='checkbox'],
+.gf-page-container .gf-form-field--success input[type='radio'] {
+  border-color: var(--gf-green-6);
+}
+
+.gf-page-container .gf-form-field--success input[type='checkbox']:focus,
+.gf-page-container .gf-form-field--success input[type='radio']:focus {
+  border-color: var(--gf-green-6);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}

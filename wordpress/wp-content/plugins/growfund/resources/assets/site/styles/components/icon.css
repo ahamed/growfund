@@ -1,0 +1,52 @@
+.gf-page-container .gf-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Icon sizes */
+.gf-page-container .gf-icon--xs {
+  width: 12px;
+  height: 12px;
+}
+
+.gf-page-container .gf-icon--sm {
+  width: 14px;
+  height: 14px;
+}
+
+.gf-page-container .gf-icon--md {
+  width: 16px;
+  height: 16px;
+}
+
+.gf-page-container .gf-icon--lg {
+  width: 20px;
+  height: 20px;
+}
+
+.gf-page-container .gf-icon--xl {
+  width: 24px;
+  height: 24px;
+}
+
+/* Specific icon styles */
+.gf-page-container .gf-icon--heart {
+  color: var(--gf-gray-11);
+}
+
+.gf-page-container .gf-icon--heart:hover {
+  color: var(--gf-red-3);
+}
+
+.gf-page-container .gf-icon--comment {
+  color: var(--gf-gray-11);
+}
+
+.gf-page-container .gf-icon--bell {
+  color: var(--gf-gray-11);
+}
+
+.gf-page-container .gf-icon--share {
+  color: var(--gf-gray-13);
+}

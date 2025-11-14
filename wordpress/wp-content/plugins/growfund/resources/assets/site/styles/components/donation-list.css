@@ -1,0 +1,6 @@
+.gf-page-container .gf-donation-list__navigation {
+  display: flex;
+  gap: var(--gf-spacing-3);
+  height: 36px;
+  margin-bottom: var(--gf-spacing-4);
+}

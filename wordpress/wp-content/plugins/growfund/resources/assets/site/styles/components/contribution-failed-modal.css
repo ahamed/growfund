@@ -1,0 +1,71 @@
+.gf-page-container .gf_contribution_failed_modal_container {
+  background-color: var(--gf-gray-1);
+  border-radius: var(--gf-radius-6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  padding: var(--gf-spacing-6);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.gf-page-container .gf_contribution_failed_modal_container .gf_icon_container {
+  width: 60px;
+  height: 60px;
+  background-color: var(--gf-gray-1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -54px auto var(--gf-spacing-5);
+  border: 4px solid var(--gf-gray-1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gf-page-container .gf_contribution_failed_modal_container .gf_title {
+  font-size: var(--gf-font-size-6);
+  font-weight: var(--gf-font-weight-semibold);
+  line-height: 1.4;
+  color: var(--gf-red-3);
+  margin-bottom: var(--gf-spacing-1-5);
+}
+
+.gf-page-container .gf_contribution_failed_modal_container .gf_subtitle {
+  font-size: var(--gf-font-size-3);
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: var(--gf-spacing-6);
+}
+
+.gf-page-container .gf_contribution_failed_modal_container .gf_back_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--gf-spacing-2) var(--gf-spacing-4);
+  border-radius: var(--gf-radius-4);
+  border: 1px solid #e4e4e7;
+  color: var(--gf-gray-15);
+  font-size: var(--gf-font-size-3);
+  font-weight: var(--gf-font-weight-medium);
+  line-height: 1.5;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.gf-page-container .gf_contribution_failed_modal_container .gf_back_button:hover {
+  background-color: var(--gf-gray-6);
+  border-color: #ccc;
+}
+
+.gf-page-container .gf_contribution_failed_modal_container .gf_back_button svg {
+  margin-right: var(--gf-spacing-2);
+  width: 16px;
+  height: 16px;
+}
+
+.gf-page-container .gf_contribution_failed_modal_container .gf_back_button svg path {
+  fill: #555;
+}

@@ -1,0 +1,281 @@
+/* =========================================
+ BUTTON COMPONENTS
+ ========================================= */
+ 
+/* Legacy button styles (for backward compatibility) */
+
+.gf-page-container .gf-btn {
+  width: 100%;
+  height: 100%;
+  padding: var(--gf-spacing-3) 0;
+  border-radius: var(--gf-radius-3);
+  font-weight: var(--gf-font-weight-medium);
+  font-size: var(--gf-font-size-3);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gf-spacing-1);
+  text-align: center;
+  justify-content: center;
+  line-height: 20px;
+}
+
+.gf-page-container .gf-btn--primary {
+  background-color: var(--gf-green-4);
+  color: var(--gf-gray-1);
+}
+
+.gf-page-container .gf-btn--primary:hover {
+  background-color: var(--gf-green-6);
+}
+
+.gf-page-container .gf-btn--outline {
+  background-color: transparent;
+  border: 1px solid var(--gf-gray-9);
+  color: var(--gf-gray-13);
+}
+
+.gf-page-container .gf-btn--outline:hover {
+  border-color: var(--gf-gray-11);
+  background-color: var(--gf-gray-2);
+}
+
+.gf-page-container .gf-btn--share {
+  background-color: transparent;
+  color: var(--gf-gray-13);
+  border: none;
+  padding: 0;
+  font-weight: 400;
+  border-radius: 0;
+}
+
+.gf-page-container .gf-btn--share:hover {
+  background-color: transparent;
+  color: var(--gf-gray-16);
+  text-decoration: underline;
+}
+
+.gf-page-container .gf-btn--large {
+  padding: var(--gf-spacing-4) var(--gf-spacing-6);
+  font-size: var(--gf-font-size-md);
+  font-weight: 600;
+}
+
+.gf-page-container .gf-btn--fixed-width {
+  min-width: 144px;
+}
+
+.gf-page-container .gf-btn--gray {
+  background-color: var(--gf-gray-1);
+  color: var(--gf-gray-15);
+  border: 1px solid var(--gf-gray-8);
+}
+
+.gf-page-container .gf-btn--gray-5 {
+  background-color: var(--gf-gray-5);
+  border: unset;
+}
+
+.gf-page-container .gf-btn--gray:hover {
+  background-color: var(--gf-gray-2);
+  color: var(--gf-gray-14);
+}
+
+/* Amount selector button variant */
+.gf-page-container .gf-amount-selector-btn {
+  background-color: var(--gf-gray-1);
+  color: var(--gf-gray-15);
+  border: 1px solid var(--gf-gray-8);
+  transition: all 0.2s ease;
+}
+
+.gf-page-container .gf-amount-selector-btn:hover {
+  background-color: var(--gf-green-4);
+  color: var(--gf-gray-1);
+  border-color: var(--gf-green-4);
+}
+
+.gf-page-container .gf-amount-selector-btn.selected,
+.gf-page-container .gf-amount-selector-btn.gf-btn--primary {
+  background-color: var(--gf-green-4);
+  color: var(--gf-gray-1);
+  border-color: var(--gf-green-4);
+}
+
+.gf-page-container .gf-amount-selector-btn.selected:hover,
+.gf-page-container .gf-amount-selector-btn.gf-btn--primary:hover {
+  background-color: var(--gf-green-6);
+  border-color: var(--gf-green-6);
+}
+
+.gf-page-container .gf-btn--reward {
+  background-color: var(--gf-gray-1);
+  color: var(--gf-gray-15);
+  border: 1px solid var(--gf-border-primary);
+}
+
+.gf-page-container .gf-btn--reward:hover {
+  background-color: var(--gf-green-4);
+  color: var(--gf-gray-3);
+}
+
+/* =========================================
+ DISABLED BUTTON STATES
+ ========================================= */
+.gf-page-container .gf-btn--disabled,
+.gf-page-container .gf-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.gf-page-container .gf-btn--disabled:hover,
+.gf-page-container .gf-btn:disabled:hover {
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+  transform: none;
+}
+
+/* =========================================
+ BUTTON VARIANTS
+ ========================================= */
+/* Icon-only buttons */
+.gf-page-container .gf-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gf-spacing-2);
+  border-radius: var(--gf-radius-3);
+  background: none;
+  border: none;
+  color: var(--gf-gray-12);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.gf-page-container .gf-icon-btn .gf-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: unset;
+}
+
+.gf-page-container .gf-icon-btn:hover {
+  color: var(--gf-gray-14);
+  background-color: var(--gf-gray-4);
+}
+
+.gf-page-container .gf-icon-btn:focus {
+  outline: none;
+  color: var(--gf-gray-16);
+}
+
+/* Bookmark button */
+.gf-page-container .gf-bookmark-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gf-spacing-2);
+  border-radius: var(--gf-radius-3);
+  background: none;
+  border: none;
+  color: var(--gf-gray-12);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.gf-page-container .gf-bookmark-btn .gf-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: unset;
+}
+
+.gf-page-container .gf-bookmark-btn:hover {
+  color: var(--gf-gray-14);
+  background-color: var(--gf-gray-4);
+}
+
+.gf-page-container .gf-bookmark-btn:focus {
+  outline: none;
+  color: var(--gf-gray-16);
+}
+
+/* Bookmark button variant - for save/bookmark functionality */
+.gf-page-container .gf-btn--bookmark {
+  background-color: var(--gf-gray-1);
+  color: var(--gf-gray-15);
+  border: 1px solid var(--gf-gray-8);
+  transition: all 0.2s ease;
+}
+
+.gf-page-container .gf-btn--bookmark:hover {
+  background-color: var(--gf-gray-2);
+  color: var(--gf-gray-14);
+}
+
+.gf-page-container .gf-btn--bookmark.bookmarked {
+  background-color: var(--gf-gray-1);
+  color: var(--gf-green-4);
+  border: 1px solid var(--gf-gray-8);
+}
+
+.gf-page-container .gf-btn--bookmark.bookmarked:hover {
+  background-color: var(--gf-gray-2);
+  color: var(--gf-green-4);
+}
+
+.gf-page-container .gf-btn--bookmark.bookmarked .gf-icon {
+  color: var(--gf-green-4);
+}
+
+/* Ensure proper icon positioning */
+.gf-page-container .gf-btn--bookmark .gf-icon {
+  flex-shrink: 0;
+  margin-right: var(--gf-spacing-1);
+}
+
+.gf-page-container .gf-btn--bookmark .gf-icon--bookmark,
+.gf-page-container .gf-btn--bookmark .gf-icon--check-circled {
+  width: 16px;
+  height: 16px;
+}
+
+/* Back button */
+.gf-page-container .gf-back-btn {
+  border: 1px solid var(--gf-gray-8);
+  padding: var(--gf-spacing-3);
+  background: transparent;
+  border-radius: var(--gf-radius-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--gf-gray-10);
+}
+
+.gf-page-container .gf-back-btn:hover {
+  background: var(--gf-gray-3);
+  color: var(--gf-gray-13);
+}
+
+.gf-page-container .gf-back-btn:active {
+  background: var(--gf-gray-4);
+}
+
+.gf-page-container .gf-back-btn .gf-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: unset;
+}

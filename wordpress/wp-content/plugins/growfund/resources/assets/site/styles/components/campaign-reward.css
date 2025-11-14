@@ -1,0 +1,610 @@
+/* Main campaign reward container */
+.gf-page-container .gf-campaign-reward {
+  border-radius: var(--gf-radius-2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Reward image section */
+.gf-page-container .gf-reward-image {
+  width: 100%;
+  aspect-ratio: var(--gf-reward-image-aspect-ratio);
+  overflow: hidden;
+}
+
+.gf-page-container .gf-reward-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--gf-radius-2) var(--gf-radius-2) 0 0;
+}
+
+/* Reward content section */
+.gf-page-container .gf-reward-content {
+  padding: var(--gf-spacing-4);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Header with title and price */
+.gf-page-container .gf-reward-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--gf-spacing-4);
+  color: var(--gf-text-primary);
+  font-size: var(--gf-font-size-6);
+}
+
+.gf-page-container .gf-reward-title {
+  font-weight: var(--gf-font-weight-medium);
+}
+
+.gf-page-container .gf-reward-price {
+  font-weight: var(--gf-font-weight-medium);
+}
+
+/* Description */
+.gf-page-container .gf-reward-description {
+  color: var(--gf-gray-15);
+  font-size: var(--gf-font-size-3);
+  line-height: 20px;
+  margin-bottom: var(--gf-spacing-3);
+}
+
+/* Details grid (shipping and backers) */
+.gf-page-container .gf-reward-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gf-spacing-2);
+  padding: var(--gf-spacing-2) 0;
+}
+
+.gf-page-container .gf-reward-shipping,
+.gf-page-container .gf-reward-backers {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gf-spacing-2);
+}
+
+.gf-page-container .gf-reward-shipping-text-container,
+.gf-page-container .gf-reward-backers-text-container,
+.gf-page-container .gf-reward-delivery-text-container,
+.gf-page-container .gf-reward-quantity-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gf-spacing-1);
+}
+
+.gf-page-container .gf-reward-shipping-label,
+.gf-page-container .gf-reward-backers-label,
+.gf-page-container .gf-reward-delivery-label,
+.gf-page-container .gf-reward-quantity-label {
+  font-size: var(--gf-font-size-2);
+  line-height: 14px;
+  color: var(--gf-accent-dark);
+}
+
+.gf-page-container .gf-reward-shipping-text,
+.gf-page-container .gf-reward-backers-text,
+.gf-page-container .gf-reward-delivery-text,
+.gf-page-container .gf-reward-quantity-text {
+  font-size: var(--gf-font-size-2);
+  line-height: 14px;
+  color: var(--gf-text-foreground);
+}
+
+/* Meta information (delivery and quantity) */
+.gf-page-container .gf-reward-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gf-spacing-2);
+  padding: var(--gf-spacing-2) 0;
+}
+
+.gf-page-container .gf-delivery,
+.gf-page-container .gf-quantity {
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-2);
+  margin-bottom: var(--gf-spacing-2);
+  font-size: var(--gf-font-size-sm);
+  color: var(--gf-gray-14);
+}
+
+/* Items list */
+.gf-page-container .gf-reward-items {
+  margin: var(--gf-spacing-2) 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Minimum height for 3 items */
+.gf-page-container .gf-reward-items-label {
+  font-size: var(--gf-font-size-3);
+  line-height: 20px;
+  color: var(--gf-text-primary);
+  font-weight: var(--gf-font-weight-medium);
+  margin-bottom: var(--gf-spacing-2);
+  flex-shrink: 0;
+}
+
+.gf-page-container .gf-reward-items-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+/* Pledge variant specific styles for items */
+.gf-page-container .gf-campaign-reward--pledge .gf-reward-items {
+  min-height: auto;
+}
+
+/* Remove fixed minimum height for pledge variant */
+.gf-page-container .gf-campaign-reward--pledge .gf-reward-items-list {
+  min-height: auto;
+  max-height: 200px;
+}
+
+.gf-page-container .gf-reward-no-items {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  background-color: var(--gf-gray-2);
+  border: 2px dashed var(--gf-gray-8);
+  border-radius: var(--gf-radius-2);
+}
+
+.gf-page-container .gf-no-items-message {
+  color: var(--gf-gray-11);
+  font-size: var(--gf-font-size-3);
+  line-height: 20px;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+}
+
+.gf-page-container .gf-reward-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--gf-gray-1);
+  align-items: center;
+  padding: var(--gf-spacing-1-5) 0 var(--gf-spacing-1-5) var(--gf-spacing-1-5);
+  border: 1px solid var(--gf-gray-5);
+  gap: var(--gf-spacing-3);
+  margin-bottom: var(--gf-spacing-1);
+  border-radius: var(--gf-radius-2);
+  min-height: 58px;
+}
+
+/* Fixed height for each item */
+.gf-page-container .gf-reward-item:last-child {
+  margin-bottom: 0;
+}
+
+.gf-page-container .gf-reward-item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gf-spacing-1);
+}
+
+.gf-page-container .gf-reward-item-name {
+  font-size: var(--gf-font-size-3);
+  color: var(--gf-gray-15);
+  font-weight: var(--gf-font-weight-medium);
+}
+
+.gf-page-container .gf-reward-item-image {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--gf-radius-2);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.gf-page-container .gf-reward-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gf-page-container .gf-qty {
+  color: var(--gf-gray-11);
+  font-size: var(--gf-font-size-2);
+  line-height: 18px;
+}
+
+/* Buttons */
+.gf-page-container .gf-reward-button {
+  width: 100%;
+  padding: var(--gf-spacing-4);
+  background-color: var(--gf-green-6);
+  color: var(--gf-gray-1);
+  border: none;
+  border-radius: var(--gf-radius-sm);
+  font-size: var(--gf-font-size-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: var(--gf-spacing-2);
+}
+
+.gf-page-container .gf-reward-button:hover {
+  background-color: var(--gf-green-5);
+}
+
+.gf-page-container .gf-reward-button--secondary {
+  background-color: var(--gf-gray-8);
+  color: var(--gf-gray-16);
+}
+
+.gf-page-container .gf-reward-button--secondary:hover {
+  background-color: var(--gf-gray-9);
+}
+
+.gf-page-container .gf-reward-button--outline {
+  background-color: transparent;
+  color: var(--gf-gray-14);
+  border: 1px solid var(--gf-gray-8);
+}
+
+.gf-page-container .gf-reward-button--outline:hover {
+  background-color: var(--gf-gray-2);
+}
+
+.gf-page-container .gf-reward-button:last-child {
+  margin-bottom: 0;
+}
+
+/* See more link */
+.gf-page-container .gf-reward-see-more {
+  margin: var(--gf-spacing-4) 0;
+}
+
+/* Shipping info section */
+.gf-page-container .gf-reward-shipping-info {
+  margin: var(--gf-spacing-4) 0;
+}
+
+.gf-page-container .gf-reward-shipping-info p {
+  margin: 0 0 var(--gf-spacing-1) 0;
+  font-size: var(--gf-font-size-sm);
+  color: var(--gf-gray-14);
+}
+
+.gf-page-container .gf-reward-shipping-info p:first-child {
+  font-weight: 600;
+  color: var(--gf-gray-16);
+}
+
+/* =========================================
+ PLEDGE VARIANT STYLES
+ ========================================= */
+/* Pledge variant main container */
+.gf-page-container .gf-campaign-reward--pledge {
+  padding: var(--gf-spacing-4);
+  background-color: var(--gf-gray-1);
+}
+
+.gf-page-container .gf-campaign-reward--pledge:hover {
+  border-color: var(--gf-green-4);
+}
+
+/* Pledge layout - two column arrangement */
+.gf-page-container .gf-reward-pledge-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gf-spacing-4);
+  background-color: var(--gf-gray-1);
+  border-radius: var(--gf-radius-3);
+}
+
+.gf-page-container .gf-campaign-reward--pledge .gf-reward-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.gf-page-container .gf-reward-pledge-right {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--gf-spacing-3);
+  flex: 1;
+  width: 100%;
+}
+
+.gf-page-container .gf-reward-pledge-image {
+  width: 100%;
+  aspect-ratio: 1.17;
+  border-radius: var(--gf-radius-2);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.gf-page-container .gf-reward-pledge-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gf-page-container .gf-reward-pledge-action {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 100%;
+}
+
+.gf-page-container .gf-campaign-reward--pledge .gf-reward-pledge-button {
+  width: 100%;
+  padding: var(--gf-spacing-3) var(--gf-spacing-5);
+  font-size: var(--gf-font-size-3);
+  font-weight: var(--gf-font-weight-semibold);
+  white-space: nowrap;
+  min-width: unset;
+  max-width: none;
+}
+
+/* =========================================
+   CHECKOUT VARIANT STYLES
+   ========================================= */
+/* Checkout variant main container */
+.gf-page-container .gf-campaign-reward--checkout {
+  /* padding: var(--gf-spacing-4); */
+  /* Checkout header with small image and reward info */
+}
+
+.gf-page-container .gf-reward-checkout-header {
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-3);
+  margin-bottom: var(--gf-spacing-4);
+}
+
+.gf-page-container .gf-reward-checkout-image {
+  aspect-ratio: 1.7777777778;
+  width: 156px;
+  height: auto;
+  border-radius: var(--gf-radius-2);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.gf-page-container .gf-reward-checkout-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gf-page-container .gf-reward-checkout-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gf-spacing-2);
+}
+
+.gf-page-container .gf-campaign-reward--checkout .gf-reward-title {
+  font-size: var(--gf-font-size-6);
+  line-height: 120%;
+  color: var(--gf-gray-15);
+  font-weight: var(--gf-font-weight-semibold);
+  margin: 0;
+}
+
+.gf-page-container .gf-campaign-reward--checkout .gf-reward-price {
+  font-size: var(--gf-font-size-5);
+  line-height: 27px;
+  color: var(--gf-gray-15);
+  font-weight: var(--gf-font-weight-normal);
+}
+
+/* Checkout items section */
+.gf-page-container .gf-reward-items--checkout {
+  margin: 0;
+  min-height: 200px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gf-page-container .gf-reward-items--checkout .gf-reward-items-label {
+  font-size: var(--gf-font-size-3);
+  line-height: 21px;
+  color: var(--gf-gray-13);
+  font-weight: var(--gf-font-weight-normal);
+  margin-bottom: var(--gf-spacing-2);
+  flex-shrink: 0;
+}
+
+.gf-page-container .gf-reward-items--checkout .gf-reward-items-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 200px;
+  min-height: 180px;
+}
+
+.gf-page-container .gf-reward-items--checkout .gf-reward-item {
+  background-color: transparent;
+  border: 1px solid var(--gf-gray-5);
+  border-radius: var(--gf-radius-2);
+  padding: var(--gf-spacing-2);
+  margin-bottom: var(--gf-spacing-2);
+  min-height: 56px;
+}
+
+.gf-page-container .gf-reward-items--checkout .gf-reward-item:last-child {
+  margin-bottom: 0;
+}
+
+.gf-page-container .gf-reward-items--checkout .gf-reward-item-image {
+  width: 40px;
+  height: 40px;
+}
+
+.gf-page-container .gf-reward-items--checkout .gf-reward-item-name {
+  font-size: var(--gf-font-size-3);
+  line-height: 20px;
+  color: var(--gf-gray-15);
+  font-weight: var(--gf-font-weight-medium);
+}
+
+.gf-page-container .gf-reward-items--checkout .gf-qty {
+  font-size: var(--gf-font-size-2);
+  line-height: 18px;
+  color: var(--gf-gray-11);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 1023px) {
+  .gf-page-container .gf-reward-title {
+    font-size: var(--gf-font-size-4);
+    line-height: 20px;
+  }
+
+  .gf-page-container .gf-reward-price {
+    font-size: var(--gf-font-size-4);
+    line-height: 20px;
+  }
+
+  .gf-page-container .gf-reward-description {
+    font-size: var(--gf-font-size-2);
+    line-height: 18px;
+  }
+
+  .gf-page-container .gf-reward-items {
+    min-height: 180px;
+  }
+
+  /* Slightly smaller minimum height on mobile */
+  .gf-page-container .gf-reward-items-list {
+    max-height: 180px;
+    min-height: 160px;
+  }
+
+  .gf-page-container .gf-campaign-reward--pledge .gf-reward-items {
+    min-height: auto;
+  }
+
+  .gf-page-container .gf-campaign-reward--pledge .gf-reward-items-list {
+    min-height: auto;
+    max-height: 180px;
+  }
+
+  .gf-page-container .gf-reward-no-items {
+    min-height: 160px;
+  }
+
+  .gf-page-container .gf-no-items-message {
+    font-size: var(--gf-font-size-2);
+    line-height: 18px;
+  }
+
+  .gf-page-container .gf-reward-item {
+    min-height: 52px;
+  }
+
+  .gf-page-container .gf-reward-item-name {
+    font-size: var(--gf-font-size-2);
+    color: var(--gf-gray-15);
+    font-weight: var(--gf-font-weight-normal);
+    line-height: 18px;
+  }
+
+  .gf-page-container .gf-qty {
+    font-size: var(--gf-font-size-1);
+  }
+
+  .gf-page-container .gf-reward-checkout-header {
+    gap: var(--gf-spacing-3);
+    margin-bottom: var(--gf-spacing-4);
+  }
+
+  .gf-page-container .gf-reward-checkout-image {
+    aspect-ratio: 1.7777777778;
+    width: 100px;
+  }
+
+  .gf-page-container .gf-campaign-reward--checkout .gf-reward-title {
+    font-size: var(--gf-font-size-4);
+    line-height: 20px;
+  }
+
+  .gf-page-container .gf-campaign-reward--checkout .gf-reward-price {
+    font-size: var(--gf-font-size-3);
+    line-height: 21px;
+  }
+
+  .gf-page-container .gf-reward-items--checkout {
+    min-height: 180px;
+  }
+
+  .gf-page-container .gf-reward-items--checkout .gf-reward-items-list {
+    max-height: 180px;
+    min-height: 160px;
+  }
+
+  .gf-page-container .gf-reward-items--checkout .gf-reward-items-label {
+    font-size: var(--gf-font-size-2);
+    line-height: 18px;
+    margin-bottom: var(--gf-spacing-2);
+  }
+
+  .gf-page-container .gf-reward-items--checkout .gf-reward-item {
+    padding: var(--gf-spacing-1-5);
+    margin-bottom: var(--gf-spacing-1-5);
+    min-height: 52px;
+  }
+
+  .gf-page-container .gf-reward-items--checkout .gf-reward-item-image {
+    width: 36px;
+    height: 36px;
+  }
+
+  .gf-page-container .gf-reward-items--checkout .gf-reward-item-name {
+    font-size: var(--gf-font-size-2);
+    line-height: 18px;
+  }
+
+  .gf-page-container .gf-reward-items--checkout .gf-qty {
+    font-size: var(--gf-font-size-1);
+  }
+
+  /* Pledge variant mobile styles */
+  .gf-page-container .gf-reward-pledge-layout {
+    flex-direction: column;
+    gap: var(--gf-spacing-3);
+  }
+
+  .gf-page-container .gf-reward-pledge-right {
+    order: 1;
+    align-self: stretch;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--gf-spacing-3);
+    padding: 0 var(--gf-spacing-4) var(--gf-spacing-4) var(--gf-spacing-4);
+  }
+
+  .gf-page-container .gf-reward-pledge-image {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 1.17;
+    height: auto;
+  }
+
+  .gf-page-container .gf-reward-pledge-action {
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .gf-page-container .gf-campaign-reward--pledge .gf-reward-pledge-button {
+    width: 100%;
+    max-width: none;
+    min-width: unset;
+  }
+}

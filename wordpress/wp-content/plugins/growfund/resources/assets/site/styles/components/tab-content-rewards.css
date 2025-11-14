@@ -1,0 +1,29 @@
+.gf-page-container .gf-tab-content--rewards {
+  padding: var(--gf-spacing-12) 0;
+}
+
+.gf-page-container .gf-rewards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 410px));
+  gap: var(--gf-spacing-6);
+  padding-right: var(--gf-spacing-2);
+  justify-content: start;
+}
+
+.gf-page-container .gf-rewards-grid .gf-campaign-reward {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (max-width: 1023px) {
+  .gf-page-container .gf-rewards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    padding-right: 0;
+  }
+
+  .gf-page-container .gf-rewards-grid .gf-reward-tier {
+    width: 100%;
+    max-width: none;
+  }
+}

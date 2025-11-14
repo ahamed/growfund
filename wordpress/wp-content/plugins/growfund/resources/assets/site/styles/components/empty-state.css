@@ -1,0 +1,52 @@
+.gf-page-container .gf-empty-state {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gf-spacing-4);
+  padding: var(--gf-spacing-4);
+  background: transparent;
+  border: 1px solid var(--gf-gray-6);
+  border-radius: var(--gf-radius-4);
+}
+
+.gf-page-container .gf-empty-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gf-page-container .gf-empty-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gf-page-container .gf-empty-title {
+  font-weight: var(--gf-font-weight-semibold);
+  color: var(--gf-gray-15);
+  line-height: 20px;
+}
+
+.gf-page-container .gf-empty-message {
+  margin-top: var(--gf-spacing-2);
+  font-size: var(--gf-font-size-2);
+  color: var(--gf-gray-13);
+  line-height: 18px;
+}
+
+.gf-page-container .gf-empty-action {
+  margin-top: var(--gf-spacing-4);
+  color: var(--gf-green-4);
+  font-weight: var(--gf-font-weight-medium);
+  font-size: var(--gf-font-size-2);
+  text-decoration: none;
+  margin-left: 0;
+  transition: text-decoration 0.2s;
+}
+
+.gf-page-container .gf-empty-action:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,327 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* The color variables from the design system */
+    --gf-spacing: 1rem;
+    --gf-red-1: 2 100% 95%;
+    --gf-red-2: 0 70% 71%;
+    --gf-red-3: 0 100% 42%;
+    --gf-green-1: 141 100% 95%;
+    --gf-green-2: 149 49% 92%;
+    --gf-green-3: 145 36% 44%;
+    --gf-green-4: 145 47% 37%;
+    --gf-green-5: 134 61% 41%;
+    --gf-green-6: 134 61% 28%;
+    --gf-green-7: 80 100% 94%;
+    --gf-green-8: 145 42% 54%;
+    --gf-green-9: 148 79% 81%;
+    --gf-green-10: 144 61% 89%;
+    --gf-green-11: 124 59% 83%;
+    --gf-green-12: 158 54% 76%;
+    --gf-green-13: 153 31% 35%;
+    --gf-yellow-1: 61 100% 89%;
+    --gf-yellow-2: 54 100% 15%;
+    --gf-yellow-3: 45 100% 51%;
+    --gf-yellow-4: 54 99% 31%;
+    --gf-yellow-5: 49 100% 88%;
+    --gf-orange-1: 37 100% 92%;
+    --gf-orange-2: 42 100% 18%;
+    --gf-orange-3: 19 100% 94%;
+    --gf-orange-4: 38 100% 88%;
+    --gf-pink-1: 311 100% 65%;
+    --gf-pink-2: 311 100% 53%;
+    --gf-pink-3: 290 100% 89%;
+    --gf-blue-1: 187 100% 93%;
+    --gf-blue-2: 205 100% 40%;
+    --gf-blue-3: 220 100% 50%;
+    --gf-blue-4: 201 100% 95%;
+    --gf-blue-5: 220 100% 94%;
+    --gf-blue-6: 202 100% 85%;
+    --gf-blue-7: 205 40% 76%;
+    --gf-blue-8: 231 49% 92%;
+    --gf-violet-1: 266 100% 95%;
+    --gf-violet-2: 266 100% 64%;
+    --gf-violet-3: 266 93% 95%;
+    --gf-gray-1: 0 0% 100%;
+    --gf-gray-2: 0 0% 99%;
+    --gf-gray-3: 0 0% 98%;
+    --gf-gray-4: 0 0% 97%;
+    --gf-gray-5: 0 0% 96%;
+    --gf-gray-6: 0 0% 94%;
+    --gf-gray-7: 0 0% 93%;
+    --gf-gray-8: 0 0% 90%;
+    --gf-gray-9: 0 0% 84%;
+    --gf-gray-10: 0 0% 81%;
+    --gf-gray-11: 0 0% 72%;
+    --gf-gray-12: 0 0% 55%;
+    --gf-gray-13: 0 0% 39%;
+    --gf-gray-14: 0 0% 30%;
+    --gf-gray-15: 0 0% 20%;
+    --gf-gray-16: 0 0% 11%;
+    --gf-gray-17: 240 6% 10%;
+    --gf-accent: 240 5% 96%;
+    --gf-accent-dark: 240 4% 46%;
+    --ring: 0 0% 30%;
+    --gf-white: 0 0% 100%;
+    --gf-black: 0 0% 0%;
+
+    /* Branding color variables */
+    --gf-brand-bg: 145 47% 37%;
+    --gf-brand-bg-hover: 145 36% 44%;
+    --gf-sidebar-bg: 141 100% 95%;
+    --gf-sidebar-alt: 134 61% 41%;
+    --gf-sidebar-fg: 134 61% 28%;
+    --gf-brand-foreground: 0 0% 100%;
+
+    --gf-container-width-lg: 72rem; /* 1152px */
+    --gf-container-width: 64rem; /* 1024px */
+    --gf-container-width-sm: 48rem; /* 768px */
+    --gf-container-width-xs: 36rem; /* 576px */
+
+    --gf-topbar-height-sm: 3rem; /* 48px */
+    --gf-topbar-height: 3.75rem; /* 60px */
+    --gf-wp-topbar-height: 2rem; /* 32px */
+
+    --gf-sidebar-width: 13.25rem; /* 212px */
+
+    --gf-radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply gf-border-border gf-outline-ring/50;
+  }
+
+  ::selection {
+    background-color: hsl(var(--gf-green-5));
+    color: #fff;
+  }
+
+  body {
+    font-size: 16px;
+    @apply gf-font-inter gf-bg-background-secondary gf-text-fg-primary gf-leading-lg gf-tracking-normal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply gf-font-inter gf-font-semibold gf-tracking-normal gf-normal-case;
+  }
+  h1 {
+    @apply gf-text-3xl gf-leading-3xl;
+  }
+  h2 {
+    @apply gf-text-2xl gf-leading-2xl;
+  }
+  h3 {
+    @apply gf-text-xl gf-leading-xl;
+  }
+  h4 {
+    @apply gf-text-lg gf-leading-lg;
+  }
+  h5 {
+    @apply gf-text-md gf-leading-md;
+  }
+  h6 {
+    @apply gf-text-base gf-leading-sm;
+  }
+}
+
+@layer components {
+  .gf-typo-h1 {
+    @apply gf-text-3xl gf-font-semibold gf-leading-3xl;
+  }
+  .gf-typo-h2 {
+    @apply gf-text-2xl gf-font-semibold gf-leading-2xl;
+  }
+  .gf-typo-h3 {
+    @apply gf-text-xl gf-font-semibold gf-leading-xl;
+  }
+  .gf-typo-h4 {
+    @apply gf-text-lg gf-font-semibold gf-leading-lg;
+  }
+  .gf-typo-h5 {
+    @apply gf-text-md gf-font-semibold gf-leading-md;
+  }
+  .gf-typo-h6 {
+    @apply gf-text-base gf-font-semibold gf-leading-sm;
+  }
+  .gf-typo-paragraph {
+    @apply gf-text-base gf-font-normal gf-leading-lg;
+  }
+  .gf-typo-small {
+    @apply gf-text-sm gf-font-normal gf-leading-md;
+  }
+  .gf-typo-tiny {
+    @apply gf-text-xs gf-font-normal gf-leading-sm;
+  }
+  .gf-truncate-2-lines {
+    @apply gf-overflow-hidden gf-text-ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .gf-hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .gf-pro-badge {
+    background: conic-gradient(
+      from 28.54deg at 57.25% 59.25%,
+      #ffb413 0deg,
+      #fff9bf 360deg,
+      #ffb413 360deg
+    );
+    border: 1px solid hsla(44, 100%, 51%, 1);
+    @apply gf-inline gf-typo-tiny gf-text-fg-primary gf-px-3 gf-py-px gf-rounded-full;
+  }
+}
+
+.wp-editor-container .mce-toolbar-grp {
+  @apply gf-bg-background-surface gf-border-none gf-border-b gf-border-b-border gf-rounded-tl-md gf-rounded-tr-md;
+}
+
+.wp-editor-container {
+  @apply gf-rounded-md gf-rounded-tr-none gf-overflow-hidden gf-shadow-none;
+}
+
+.wp-editor-tabs {
+  @apply gf-mt-[2px];
+}
+
+.wp-editor-tabs > button {
+  @apply gf-rounded-tl-md gf-rounded-tr-md gf-bg-background-surface;
+}
+
+.wp-media-buttons > button.insert-media {
+  @apply gf-inline-flex gf-items-center gf-justify-center gf-gap-2 gf-typo-small gf-font-medium gf-leading-[1] gf-whitespace-nowrap gf-bg-background-surface gf-border-border gf-rounded-md gf-transition-colors hover:gf-text-fg-primary hover:gf-border-border hover:gf-bg-background-fill-hover focus-visible:gf-outline-none focus-visible:gf-ring-2 focus-visible:gf-ring-ring focus-visible:gf-ring-offset-2 disabled:gf-pointer-events-none disabled:gf-opacity-50 [&_span]:gf-text-icon-primary [&_span]:gf-pointer-events-none [&_span]:gf-size-4 [&_span]:gf-shrink-0 gf-relative gf-text-fg-primary gf-h-8 gf-px-3 gf-typo-tiny;
+}
+
+.html-active .wp-editor-container textarea {
+  @apply gf-border-border !gf-visible focus:gf-shadow-none;
+}
+
+.wp-editor-container .mce-top-part::before {
+  @apply gf-shadow-none;
+}
+
+.wp-editor-container .mce-top-part > div {
+  @apply gf-border-solid gf-border-b gf-border-b-border;
+}
+
+.wp-editor-container .mce-toolbar .mce-ico {
+  @apply gf-text-icon-neutral-tertiary;
+}
+
+.wp-editor-container .mce-toolbar .mce-btn-group .mce-btn {
+  @apply hover:gf-shadow-none focus:gf-shadow-none active:gf-border-none gf-outline-none gf-border-none;
+}
+
+.wp-editor-container .mce-toolbar .mce-btn-group .mce-btn.mce-active:hover .mce-ico {
+  @apply gf-text-fg-primary;
+}
+
+.wp-editor-container .mce-toolbar .mce-btn-group .mce-btn.mce-listbox {
+  @apply gf-rounded-sm gf-border-solid !gf-border !gf-border-border;
+}
+
+.wp-editor-container .mce-toolbar .mce-btn-group > div:has(.mce-btn) {
+  @apply gf-flex gf-items-center gf-gap-1;
+}
+
+.gf-color-picker-layout .react-colorful {
+  @apply gf-w-64 gf-h-56 gf-space-y-4;
+}
+
+.gf-color-picker-layout .react-colorful__saturation {
+  @apply gf-rounded-md gf-border gf-border-border gf-shadow-md;
+}
+
+.gf-color-picker-layout .react-colorful__saturation-pointer {
+  @apply gf-size-4;
+}
+
+.gf-color-picker-layout .react-colorful__hue {
+  @apply gf-h-4 gf-rounded-lg;
+}
+
+.gf-color-picker-layout .react-colorful__hue-pointer {
+  @apply gf-size-4;
+}

@@ -1,0 +1,45 @@
+/* =========================================
+ CAMPAIGN LIST COMPONENT
+ ========================================= */
+
+.gf-page-container .gf-campaign-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin-top: var(--gf-spacing-4);
+  align-items: start;
+}
+
+.gf-page-container .gf-campaign-list__title {
+  font-size: var(--gf-font-size-6);
+  font-weight: var(--gf-font-weight-semibold);
+  line-height: 28px;
+}
+
+.gf-page-container .gf-campaign-card {
+  width: 100%;
+  max-width: 312px;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+}
+
+.gf-page-container .gf-campaign-list__pagination {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 1023px) {
+  .gf-page-container .gf-campaign-list__grid {
+    grid-template-columns: 1fr;
+    gap: var(--gf-spacing-4);
+    padding: 0;
+    width: 100%;
+  }
+
+  .gf-page-container .gf-campaign-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

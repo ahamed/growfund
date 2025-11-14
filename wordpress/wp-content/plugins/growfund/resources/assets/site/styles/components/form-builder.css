@@ -1,0 +1,595 @@
+/* Form container - uses CSS Grid for consistent 12px gaps */
+.gf-page-container .gf-form-builder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gf-spacing-8);
+}
+
+/* Form sections/groups - also use grid for consistent spacing */
+.gf-page-container .gf-form-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  /* Ensure form sections are not scrollable */
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+/* Prevent any child elements from being scrollable */
+.gf-page-container .gf-form-section * {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+  /* Ensure form fields are not scrollable */
+}
+
+.gf-page-container .gf-form-field {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+  /* Additional rules to prevent any scrollable behavior */
+}
+
+.gf-page-container .gf-form-section,
+.gf-page-container .gf-form-section *,
+.gf-page-container .gf-form-field,
+.gf-page-container .gf-form-field * {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gf-page-container .gf-form-section .gf-input,
+.gf-page-container .gf-form-field .gf-input {
+  height: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+}
+
+/* Ensure radio buttons and checkboxes maintain their proper dimensions */
+.gf-page-container .gf-form-section .gf-input[type='radio'],
+.gf-page-container .gf-form-field .gf-input[type='radio'] {
+  height: 16px;
+  max-height: 16px;
+  width: 16px;
+}
+
+.gf-page-container .gf-form-section .gf-input[type='checkbox'],
+.gf-page-container .gf-form-field .gf-input[type='checkbox'] {
+  height: 16px;
+  max-height: 16px;
+  width: 16px;
+}
+
+/* Hide scrollbars for webkit browsers */
+.gf-page-container .gf-form-section::-webkit-scrollbar,
+.gf-page-container .gf-form-field::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure form groups are not scrollable */
+.gf-page-container .gf-form-section .gf-form-row-half {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+/* Form section title */
+.gf-page-container .gf-form-title {
+  font-size: var(--gf-font-size-4);
+  font-weight: var(--gf-font-weight-semibold);
+  line-height: 20px;
+  color: var(--gf-gray-15);
+}
+
+/* Form field wrapper - contains label, input, and description with smaller internal gaps */
+.gf-page-container .gf-form-field {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gf-spacing-1-5);
+}
+
+/* Checkbox field layout - checkbox on left, label on right */
+.gf-page-container .gf-checkbox-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gf-spacing-2);
+  justify-content: flex-start;
+}
+
+.gf-page-container .gf-checkbox-field .gf-form-label {
+  order: 2;
+}
+
+.gf-page-container .gf-checkbox-field input[type='checkbox'] {
+  order: 1;
+}
+
+/* Radio field layout - radio on left, label on right */
+.gf-page-container .gf-radio-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gf-spacing-2);
+  justify-content: flex-start;
+  margin-bottom: var(--gf-spacing-2);
+}
+
+.gf-page-container .gf-radio-field input[type='radio'] {
+  order: 1;
+}
+
+.gf-page-container .gf-radio-field .gf-form-label {
+  order: 2;
+}
+
+/* Input field layout - label on top, input below (default) */
+.gf-page-container .gf-input-field {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gf-spacing-1-5);
+}
+
+/* Ensure proper alignment in grid rows */
+.gf-page-container .gf-form-row-half .gf-form-field {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.gf-page-container .gf-form-row-half .gf-form-field .gf-form-label {
+  flex-shrink: 0;
+  margin-bottom: var(--gf-spacing-1-5);
+}
+
+.gf-page-container .gf-form-row-half .gf-form-field input,
+.gf-page-container .gf-form-row-half .gf-form-field textarea {
+  flex: 1;
+  min-height: 40px;
+}
+
+/* Ensure checkboxes in form fields maintain consistent size */
+.gf-page-container .gf-form-field input[type='checkbox'] {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+/* Form label styling */
+.gf-page-container .gf-form-label {
+  font-size: var(--gf-font-size-3);
+  font-weight: var(--gf-font-weight-medium);
+  color: var(--gf-gray-14);
+  line-height: 1.2;
+  margin-bottom: var(--gf-spacing-1-5);
+}
+
+/* Special handling for checkbox fields to align label with checkbox */
+.gf-page-container .gf-form-field:has(input[type='checkbox']) .gf-form-label {
+  margin-bottom: 0;
+  order: 2;
+}
+
+/* Form description styling */
+.gf-page-container .gf-form-description {
+  font-size: var(--gf-font-size-2);
+  color: var(--gf-gray-12);
+  line-height: 1.4;
+  margin-top: var(--gf-spacing-1);
+}
+
+/* Form error styling */
+.gf-page-container .gf-form-error {
+  font-size: var(--gf-font-size-2);
+  color: var(--gf-red-3);
+  margin-top: var(--gf-spacing-1);
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-1);
+}
+
+.gf-page-container .gf-form-builder>*:last-child,
+.gf-page-container .gf-form-section>*:last-child {
+  margin-bottom: 0;
+}
+
+/* Form section title spacing */
+.gf-page-container .gf-form-section>.gf-form-title {
+  margin-bottom: var(--gf-spacing-3);
+}
+
+/* Pledge button styling */
+.gf-page-container .gf-form-section .gf-pledge-btn {
+  margin-top: var(--gf-spacing-4);
+}
+
+/* Two-column layout for form fields */
+.gf-page-container .gf-form-row-half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gf-spacing-4);
+  align-items: start;
+  /* Radio button row layout */
+}
+
+.gf-page-container .gf-form-row-radio {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gf-spacing-6);
+  align-items: flex-start;
+  margin-bottom: var(--gf-spacing-3);
+}
+
+.gf-page-container .gf-form-row-radio .gf-radio-field {
+  margin-bottom: 0;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 0 0 auto;
+}
+
+/* Smooth animation for tribute content */
+.gf-page-container .gf-tribute-content {
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  overflow: visible;
+  opacity: 1;
+  margin-bottom: 16px;
+  will-change: height, opacity;
+  transform: translateZ(0);
+  min-height: auto;
+  height: auto;
+}
+
+.gf-page-container .gf-tribute-content.gf-tribute-hidden {
+  height: 0 !important;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Tribute field requirements - only show red border when there are validation errors */
+.gf-page-container .gf-tribute-field-required.gf-input--error {
+  border-color: var(--gf-red-3) !important;
+}
+
+.gf-page-container .gf-tribute-field-required.gf-input--error:focus {
+  border-color: var(--gf-red-3) !important;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25) !important;
+}
+
+/* Tribute section styling */
+.gf-page-container .gf-tribute-group {
+  border: 1px solid var(--gf-gray-8);
+  border-radius: var(--gf-radius-2);
+  padding: var(--gf-spacing-4);
+  background-color: var(--gf-gray-1);
+  margin-bottom: var(--gf-spacing-4);
+}
+
+.gf-page-container .gf-tribute-group .gf-form-title {
+  color: var(--gf-gray-14);
+  font-size: var(--gf-font-size-3);
+  font-weight: var(--gf-font-weight-semibold);
+  margin-bottom: var(--gf-spacing-3);
+  padding-bottom: var(--gf-spacing-2);
+  border-bottom: 1px solid var(--gf-gray-7);
+  /* Tribute toggle checkbox styling */
+}
+
+.gf-page-container .gf-tribute-toggle {
+  margin-right: var(--gf-spacing-2);
+}
+
+.gf-page-container .gf-tribute-toggle:checked+.gf-form-label {
+  color: var(--gf-gray-15);
+  font-weight: var(--gf-font-weight-semibold);
+}
+
+/* Tribute content transition - consolidated and improved */
+.gf-page-container .gf-tribute-content {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: none;
+  opacity: 1;
+  transform: translateY(0);
+  overflow: visible;
+}
+
+.gf-page-container .gf-tribute-content.gf-tribute-hidden {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Tribute field validation states */
+.gf-page-container .gf-tribute-group .gf-form-field--error {
+  border: 1px solid var(--gf-red-3);
+  border-radius: var(--gf-radius-2);
+  padding: var(--gf-spacing-2);
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.gf-page-container .gf-tribute-group .gf-form-field--error .gf-form-label {
+  color: var(--gf-red-3);
+}
+
+/* Tribute group error message styling */
+.gf-page-container .gf-tribute-group .gf-form-error-message {
+  background-color: var(--gf-red-1);
+  color: var(--gf-red-3);
+  padding: var(--gf-spacing-3);
+  border-radius: var(--gf-radius-2);
+  margin-top: var(--gf-spacing-3);
+  font-size: var(--gf-font-size-2);
+  border-left: 3px solid var(--gf-red-3);
+}
+
+/* Form field error states */
+.gf-page-container .gf-form-field--error {
+  border: 1px solid var(--gf-red-3);
+  border-radius: var(--gf-radius-2);
+  padding: var(--gf-spacing-2);
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.gf-page-container .gf-form-field--error .gf-form-label {
+  color: var(--gf-red-3);
+}
+
+/* Form error message styling */
+.gf-page-container .gf-form-error-message {
+  background-color: var(--gf-red-1);
+  color: var(--gf-red-3);
+  padding: var(--gf-spacing-3);
+  border-radius: var(--gf-radius-2);
+  margin-top: var(--gf-spacing-3);
+  font-size: var(--gf-font-size-2);
+  border-left: 3px solid var(--gf-red-3);
+  position: relative;
+}
+
+/* Error message icon */
+.gf-page-container .gf-form-error-message::before {
+  content: '⚠';
+  margin-right: var(--gf-spacing-2);
+  font-weight: bold;
+}
+
+/* Error state for input fields */
+.gf-page-container .gf-form-field--error input[type='text'],
+.gf-page-container .gf-form-field--error input[type='email'],
+.gf-page-container .gf-form-field--error input[type='tel'],
+.gf-page-container .gf-form-field--error input[type='number'],
+.gf-page-container .gf-form-field--error textarea,
+.gf-page-container .gf-form-field--error select {
+  border-color: var(--gf-red-3);
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.gf-page-container .gf-form-field--error input[type='text']:focus,
+.gf-page-container .gf-form-field--error input[type='email']:focus,
+.gf-page-container .gf-form-field--error input[type='tel']:focus,
+.gf-page-container .gf-form-field--error input[type='number']:focus,
+.gf-page-container .gf-form-field--error textarea:focus,
+.gf-page-container .gf-form-field--error select:focus {
+  border-color: var(--gf-red-3);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
+/* Error state for checkbox fields */
+.gf-page-container .gf-form-field--error.gf-checkbox-field,
+.gf-page-container .gf-form-field--error.gf-radio-field {
+  border: 1px solid var(--gf-red-3);
+  border-radius: var(--gf-radius-2);
+  padding: var(--gf-spacing-2);
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.gf-page-container .gf-form-field--error.gf-checkbox-field input[type='checkbox'],
+.gf-page-container .gf-form-field--error.gf-radio-field input[type='radio'] {
+  border-color: var(--gf-red-3);
+}
+
+/* Flash messages styling */
+.gf-page-container .gf-flash-messages {
+  margin-bottom: var(--gf-spacing-4);
+}
+
+.gf-page-container .gf-flash-message {
+  padding: var(--gf-spacing-4);
+  border-radius: var(--gf-radius-3);
+  margin-bottom: var(--gf-spacing-3);
+  border-left: 4px solid;
+  animation: slideInDown 0.3s ease-out;
+}
+
+.gf-page-container .gf-flash-message:last-child {
+  margin-bottom: 0;
+}
+
+/* Error flash message */
+.gf-page-container .gf-flash-message--error {
+  background-color: var(--gf-red-1);
+  color: var(--gf-red-3);
+  border-left-color: var(--gf-red-3);
+}
+
+.gf-page-container .gf-flash-message--error h3 {
+  color: var(--gf-red-3);
+  margin: 0 0 var(--gf-spacing-2) 0;
+  font-size: var(--gf-font-size-4);
+}
+
+.gf-page-container .gf-flash-message--error ul {
+  margin: var(--gf-spacing-2) 0 0 0;
+  padding-left: var(--gf-spacing-4);
+}
+
+.gf-page-container .gf-flash-message--error li {
+  margin-bottom: var(--gf-spacing-1);
+}
+
+.gf-page-container .gf-flash-message--error li:last-child {
+  margin-bottom: 0;
+}
+
+/* Success flash message */
+.gf-page-container .gf-flash-message--success {
+  background-color: var(--gf-green-1);
+  color: var(--gf-green-6);
+  border-left-color: var(--gf-green-6);
+}
+
+/* Warning flash message */
+.gf-page-container .gf-flash-message--warning {
+  background-color: var(--gf-yellow-1);
+  color: var(--gf-yellow-2);
+  border-left-color: var(--gf-yellow-2);
+}
+
+/* Info flash message */
+.gf-page-container .gf-flash-message--info {
+  background-color: var(--gf-blue-1);
+  color: var(--gf-blue-4);
+  border-left-color: var(--gf-blue-4);
+}
+
+/* Flash message icons */
+.gf-page-container .gf-flash-message--error::before,
+.gf-page-container .gf-flash-message--success::before,
+.gf-page-container .gf-flash-message--warning::before,
+.gf-page-container .gf-flash-message--info::before {
+  content: '⚠';
+  margin-right: var(--gf-spacing-2);
+  font-weight: bold;
+}
+
+.gf-page-container .gf-flash-message--error::before {
+  content: '⚠';
+}
+
+.gf-page-container .gf-flash-message--success::before {
+  content: '✓';
+}
+
+.gf-page-container .gf-flash-message--warning::before {
+  content: '⚠';
+}
+
+.gf-page-container .gf-flash-message--info::before {
+  content: 'ℹ';
+}
+
+/* Flash message close button */
+.gf-page-container .gf-flash-message__close {
+  float: right;
+  background: none;
+  border: none;
+  font-size: var(--gf-font-size-4);
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.gf-page-container .gf-flash-message__close:hover {
+  opacity: 1;
+}
+
+/* Flash message animation */
+.gf-page-container .gf-flash-message {
+  animation: slideInDown 0.3s ease-out;
+}
+
+@keyframes slideInDown {
+
+  /* Responsive design */
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* =========================================
+   REGISTER FORM VARIATION - 16px gaps
+   ========================================= */
+  /* Register form container with 16px gaps */
+  .gf-page-container .gf-form-error-message {
+    font-size: var(--gf-font-size-1);
+    padding: var(--gf-spacing-2);
+  }
+
+  .gf-page-container .gf-form-field--error {
+    padding: var(--gf-spacing-1-5);
+  }
+
+  .gf-page-container .gf-flash-message {
+    padding: var(--gf-spacing-3);
+  }
+
+  .gf-page-container .gf-flash-message h3 {
+    font-size: var(--gf-font-size-3);
+  }
+
+  .gf-page-container .gf-flash-message--error::before,
+  .gf-page-container .gf-flash-message--success::before,
+  .gf-page-container .gf-flash-message--warning::before,
+  .gf-page-container .gf-flash-message--info::before {
+    display: none;
+  }
+}
+
+.gf-page-container .gf-form-builder.gf-register-form {
+  gap: 16px;
+}
+
+/* Register form sections with 16px gaps */
+.gf-page-container .gf-register-form .gf-form-section {
+  gap: 16px;
+}
+
+/* Register form individual fields with 16px gaps */
+.gf-page-container .gf-register-form .gf-form-field {
+  margin-bottom: 16px;
+}
+
+/* Remove margin from last form field */
+.gf-page-container .gf-register-form .gf-form-field:last-child {
+  margin-bottom: 0;
+}
+
+/* Fix alignment for fields inside half-width rows */
+.gf-page-container .gf-register-form .gf-form-row-half .gf-form-field {
+  margin-bottom: 0;
+}
+
+/* Add gap after half-width rows */
+.gf-page-container .gf-register-form .gf-form-row-half {
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Remove margin from last half-width row */
+.gf-page-container .gf-register-form .gf-form-row-half:last-child {
+  margin-bottom: 0;
+}

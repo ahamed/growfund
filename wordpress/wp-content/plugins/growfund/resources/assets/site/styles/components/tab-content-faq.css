@@ -1,0 +1,21 @@
+.gf-page-container .gf-tab-content--faq {
+  padding-top: var(--gf-spacing-16);
+}
+
+.gf-page-container .gf-faq-title {
+  font-size: var(--gf-font-size-11);
+  font-weight: var(--gf-font-weight-semibold);
+  line-height: 36px;
+  color: var(--gf-gray-15);
+}
+
+@media (max-width: 1023px) {
+  .gf-page-container .gf-tab-content--faq {
+    padding-top: var(--gf-spacing-4);
+  }
+
+  .gf-page-container .gf-faq-title {
+    font-size: var(--gf-font-size-8);
+    line-height: 30px;
+  }
+}

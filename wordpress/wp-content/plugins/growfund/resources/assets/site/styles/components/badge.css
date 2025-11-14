@@ -1,0 +1,153 @@
+/* =========================================
+   BADGE COMPONENT
+   ========================================= */
+
+/* Base badge styles */
+.gf-badge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gf-spacing-1);
+  border-radius: var(--gf-radius-2);
+  font-size: var(--gf-font-size-1);
+  font-weight: var(--gf-font-weight-semibold);
+  text-transform: uppercase;
+  line-height: 120%;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+/* =========================================
+   BADGE VARIANTS
+   ========================================= */
+
+/* Primary/Blue variant (SUPERBACKER style) */
+.gf-badge--primary,
+.gf-badge--blue {
+  background-color: var(--gf-blue-4);
+  color: var(--gf-gray-1);
+}
+
+.gf-badge--primary:hover,
+.gf-badge--blue:hover {
+  background-color: var(--gf-blue-3);
+}
+
+/* Success/Green variant (CREATOR style) */
+.gf-badge--success,
+.gf-badge--green {
+  background-color: var(--gf-green-4);
+  color: var(--gf-gray-1);
+}
+
+.gf-badge--success:hover,
+.gf-badge--green:hover {
+  background-color: var(--gf-green-6);
+}
+
+/* Secondary/Gray variant */
+.gf-badge--secondary,
+.gf-badge--gray {
+  background-color: var(--gf-gray-8);
+  color: var(--gf-gray-13);
+}
+
+.gf-badge--secondary:hover,
+.gf-badge--gray:hover {
+  background-color: var(--gf-gray-9);
+}
+
+/* Warning/Orange variant */
+.gf-badge--warning,
+.gf-badge--orange {
+  background-color: #f5a623;
+  color: #ffffff;
+}
+
+.gf-badge--warning:hover,
+.gf-badge--orange:hover {
+  background-color: #e8951a;
+}
+
+/* Danger/Red variant */
+.gf-badge--danger,
+.gf-badge--red {
+  background-color: #d0021b;
+  color: #ffffff;
+}
+
+.gf-badge--danger:hover,
+.gf-badge--red:hover {
+  background-color: #b8021a;
+}
+
+/* Info/Light Blue variant */
+.gf-badge--info,
+.gf-badge--light-blue {
+  background-color: #50e3c2;
+  color: #ffffff;
+}
+
+.gf-badge--info:hover,
+.gf-badge--light-blue:hover {
+  background-color: #42d4af;
+}
+
+/* Outline variants */
+.gf-badge--outline {
+  background-color: transparent;
+  border: 1px solid var(--gf-gray-8);
+  color: var(--gf-gray-13);
+}
+
+.gf-badge--outline:hover {
+  border-color: var(--gf-gray-9);
+  background-color: var(--gf-gray-2);
+}
+
+.gf-badge--outline-primary {
+  background-color: transparent;
+  border: 1px solid #4a90e2;
+  color: #4a90e2;
+}
+
+.gf-badge--outline-primary:hover {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+.gf-badge--outline-success {
+  background-color: transparent;
+  border: 1px solid #7ed321;
+  color: #7ed321;
+}
+
+.gf-badge--outline-success:hover {
+  background-color: #7ed321;
+  color: #ffffff;
+}
+
+/* =========================================
+   BADGE SIZES
+   ========================================= */
+
+.gf-badge--small {
+  padding: var(--gf-spacing-1) var(--gf-spacing-2);
+  font-size: 10px;
+}
+
+.gf-badge--large {
+  padding: var(--gf-spacing-2) var(--gf-spacing-4);
+  font-size: var(--gf-font-size-sm);
+}
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 1023px) {
+  /* Base badge mobile adjustments */
+  .gf-badge {
+    font-size: var(--gf-font-size-0);
+  }
+}

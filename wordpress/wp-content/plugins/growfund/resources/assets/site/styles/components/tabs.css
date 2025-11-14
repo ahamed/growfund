@@ -1,0 +1,210 @@
+.gf-page-container .gf-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gf-gray-8);
+  position: relative;
+}
+
+.gf-page-container .gf-tabs__nav-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.gf-page-container .gf-tabs__nav {
+  display: flex;
+  gap: var(--gf-spacing-6);
+  flex: 1;
+}
+
+.gf-page-container .gf-tabs__scroll-btn-wrapper {
+  display: none;
+}
+
+.gf-page-container .gf-tabs__scroll-btn-wrapper--left {
+  margin-right: var(--gf-spacing-2);
+}
+
+.gf-page-container .gf-tabs__scroll-btn-wrapper--right {
+  margin-left: var(--gf-spacing-2);
+}
+
+.gf-page-container .gf-tabs__button-wrapper-primary {
+  width: 177px;
+  height: 44px;
+}
+
+.gf-page-container .gf-tabs__button-wrapper-gray {
+  width: 163px;
+  height: 44px;
+}
+
+.gf-page-container .gf-tabs__btn {
+  padding-bottom: var(--gf-spacing-6);
+  color: var(--gf-gray-13);
+  font-size: var(--gf-font-size-3);
+  line-height: 122%;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-1);
+  position: relative;
+}
+
+.gf-page-container .gf-tabs__btn:hover, .gf-page-container .gf-tabs__btn:active, .gf-page-container .gf-tabs__btn:focus {
+  background: none;
+}
+
+.gf-page-container .gf-tabs__btn--active {
+  color: var(--gf-gray-15);
+  border-bottom-color: transparent;
+  font-weight: var(--gf-font-weight-semibold);
+}
+
+.gf-page-container .gf-tabs__btn--active::after {
+  content: '';
+  position: absolute;
+  bottom: -2.5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--gf-gray-16);
+  transform: translateY(3px);
+}
+
+.gf-page-container .gf-tabs__btn:hover:not(.gf-tabs__btn--active) {
+  color: var(--gf-gray-14);
+}
+
+.gf-page-container .gf-tabs__actions {
+  display: flex;
+  gap: var(--gf-spacing-2);
+  padding-bottom: var(--gf-spacing-3);
+}
+
+/* Tab Badge (specific to tabs) */
+.gf-page-container .gf-tabs .gf-badge {
+  height: 20px;
+  width: 20px;
+  background-color: var(--gf-gray-11);
+  color: var(--gf-gray-1);
+  font-size: var(--gf-font-size-1);
+  margin-left: var(--gf-spacing-2);
+  border-radius: 48px;
+  font-weight: var(--gf-font-weight-bold);
+  line-height: 120%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gf-page-container .gf-tabs .gf-badge--active {
+  background-color: var(--gf-gray-14);
+}
+
+@media (max-width: 1023px) {
+
+  /* =========================================
+   DONATION MODE STYLES
+   ========================================= */
+  .gf-page-container .gf-tabs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--gf-spacing-4);
+    padding: var(--gf-spacing-2) 0 var(--gf-spacing-3);
+    border-bottom: none;
+  }
+
+  .gf-page-container .gf-tabs__nav-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0 44px;
+  }
+
+  /* Add padding for scroll buttons */
+  .gf-page-container .gf-tabs__nav {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: var(--gf-spacing-1);
+    gap: var(--gf-spacing-4);
+    margin-bottom: 0;
+  }
+
+  .gf-page-container .gf-tabs__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gf-page-container .gf-tabs__scroll-btn-wrapper {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+  }
+
+  .gf-page-container .gf-tabs__scroll-btn {
+    width: 100%;
+    height: 100%;
+    min-width: auto;
+    min-height: auto;
+    padding: 0;
+    background: var(--gf-gray-1);
+    border: 1px solid var(--gf-gray-8);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .gf-page-container .gf-tabs__scroll-btn:hover {
+    background: white;
+    border-color: var(--gf-gray-9);
+    color: var(--gf-gray-15);
+  }
+
+  .gf-page-container .gf-tabs__scroll-btn-wrapper--left {
+    left: 0;
+    margin-right: 0;
+  }
+
+  .gf-page-container .gf-tabs__scroll-btn-wrapper--right {
+    right: 0;
+    margin-left: 0;
+  }
+
+  .gf-page-container .gf-tabs__actions {
+    display: none;
+  }
+
+  .gf-page-container .gf-tabs__actions .gf-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gf-page-container .gf-tabs__btn {
+    white-space: nowrap;
+    padding: var(--gf-spacing-2) var(--gf-spacing-3) 0;
+    font-size: var(--gf-font-size-3);
+    line-height: 122%;
+    flex-shrink: 0;
+    border-bottom: 3px solid transparent;
+    margin-bottom: var(--gf-spacing-1);
+  }
+
+  .gf-page-container .gf-tabs__btn--active {
+    border-bottom-color: transparent;
+  }
+
+  .gf-page-container .gf-tabs__btn--active::after {
+    transform: translateY(10px);
+  }
+}
+
+.gf-page-container .gf-tabs--donation-mode .gf-tabs__nav {
+  margin-bottom: -2px;
+}

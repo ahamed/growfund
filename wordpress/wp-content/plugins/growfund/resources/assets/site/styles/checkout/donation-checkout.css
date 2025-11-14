@@ -1,0 +1,594 @@
+/* =========================================
+   DONATION CHECKOUT COMPONENT
+   ========================================= */
+
+/* Container */
+.gf-donation-checkout {
+  max-width: 800px;
+  margin: var(--gf-spacing-16) auto;
+  padding: 20px;
+  background-color: var(--gf-gray-4);
+  border-radius: var(--gf-radius-16);
+}
+
+/* Header Section */
+.gf-donation-checkout__header {
+  background: var(--gf-white);
+  border-radius: var(--gf-radius-4);
+  padding: 24px 0 0;
+  margin-bottom: 24px;
+  box-shadow: var(--gf-shadow-sm);
+}
+
+.gf-donation-checkout__campaign-info {
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-6);
+  margin-bottom: 24px;
+}
+
+.gf-donation-checkout__campaign-image {
+  width: 156px;
+  border-radius: var(--gf-radius-3);
+  object-fit: cover;
+}
+
+.gf-donation-checkout__campaign-text p {
+  font-size: var(--gf-font-size-4);
+  color: var(--gf-gray-13);
+  line-height: 150%;
+}
+
+.gf-donation-checkout__campaign-title {
+  font-size: var(--gf-font-size-6);
+  font-weight: var(--gf-font-weight-semibold);
+  color: var(--gf-gray-15);
+  line-height: 1.3;
+}
+
+/* Donation Amount Section */
+.gf-donation-checkout__donation-section {
+  margin-bottom: 24px;
+}
+
+.gf-donation-checkout__section-title {
+  font-size: var(--gf-font-size-5);
+  font-weight: var(--gf-font-weight-semibold);
+  color: var(--gf-gray-15);
+  margin-bottom: 16px;
+}
+
+.gf-donation-checkout__amount-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.gf-donation-checkout__amount-btn {
+  padding: 12px 16px;
+  border: 2px solid var(--gf-gray-8);
+  border-radius: var(--gf-radius-3);
+  background: var(--gf-white);
+  color: var(--gf-gray-15);
+  font-size: var(--gf-font-size-3);
+  font-weight: var(--gf-font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gf-donation-checkout .gf-library-support-label {
+  font-size: var(--gf-font-size-5);
+  line-height: 122%;
+  font-weight: var(--gf-font-weight-semibold);
+  color: var(--gf-gray-15);
+  padding-bottom: var(--gf-spacing-4);
+}
+
+.gf-donation-checkout .gf-form-section > .gf-contact-info-title {
+  font-size: var(--gf-font-size-6);
+  font-weight: var(--gf-font-weight-medium);
+  line-height: 122%;
+  color: var(--gf-gray-15);
+  margin-bottom: var(--gf-spacing-3);
+}
+
+.gf-donation-checkout__amount-btn:hover {
+  border-color: var(--gf-gray-10);
+  background: var(--gf-gray-1);
+}
+
+.gf-donation-checkout__amount-btn--active {
+  border-color: var(--gf-blue-6);
+  background: var(--gf-blue-1);
+  color: var(--gf-blue-7);
+}
+
+.gf-donation-checkout__custom-amount {
+  margin-bottom: 16px;
+}
+
+.gf-donation-checkout__custom-amount input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--gf-gray-8);
+  border-radius: var(--gf-radius-3);
+  font-size: var(--gf-font-size-3);
+  transition: border-color 0.2s ease;
+  height: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+}
+
+.gf-donation-checkout__custom-amount input:focus {
+  outline: none;
+  border-color: var(--gf-blue-6);
+}
+
+.gf-donation-checkout__amount-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--gf-gray-1);
+  border-radius: var(--gf-radius-3);
+  font-size: var(--gf-font-size-3);
+  font-weight: var(--gf-font-weight-semibold);
+}
+
+.gf-tribute-group .gf-form-title {
+  font-size: var(--gf-font-size-5);
+  font-weight: var(--gf-font-weight-semibold);
+  line-height: 122%;
+  color: var(--gf-gray-15);
+  margin-bottom: var(--gf-spacing-4);
+}
+
+/* New amount input styling to match the image */
+.gf-donation-checkout__amount-input {
+  margin-bottom: 16px;
+  position: relative;
+  cursor: pointer;
+}
+
+.gf-donation-checkout__amount-input-content {
+  width: 100%;
+  padding: var(--gf-spacing-5);
+  border: 1px solid var(--gf-gray-8);
+  border-radius: var(--gf-radius-3);
+  background: var(--gf-gray-1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.gf-donation-checkout__amount-input-content:hover {
+  border-color: var(--gf-gray-10);
+}
+
+.gf-donation-checkout__amount-input-content:focus-within {
+  border-color: var(--gf-blue-6);
+  box-shadow: 0 0 0 3px rgba(112, 135, 172, 0.1);
+}
+
+.gf-donation-checkout__amount-label {
+  font-size: var(--gf-font-size-3);
+  color: var(--gf-gray-10);
+  font-weight: var(--gf-font-weight-normal);
+}
+
+.gf-donation-checkout__amount-value {
+  font-size: var(--gf-font-size-4);
+  font-weight: var(--gf-font-weight-semibold);
+  color: var(--gf-gray-15);
+}
+
+.gf-donation-checkout__amount-input input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid var(--gf-gray-8);
+  border-radius: var(--gf-radius-3);
+  font-size: var(--gf-font-size-4);
+  font-weight: var(--gf-font-weight-medium);
+  background: var(--gf-white);
+  color: var(--gf-gray-15);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  height: 40px;
+  max-height: 40px;
+}
+
+.gf-donation-checkout__amount-input input:focus {
+  outline: none;
+  border-color: var(--gf-blue-6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.gf-donation-checkout__amount-input input::placeholder {
+  color: var(--gf-gray-10);
+  font-weight: var(--gf-font-weight-normal);
+}
+
+/* Separator line between amount section and form fields */
+.gf-donation-checkout__separator {
+  border: none;
+  height: 1px;
+  background-color: var(--gf-gray-8);
+  width: 100%;
+}
+
+/* Summary Section */
+.gf-donation-checkout__summary {
+  margin: 24px 0;
+}
+
+.gf-donation-summary__title {
+  font-size: var(--gf-font-size-3);
+  font-weight: var(--gf-font-weight-semibold);
+  color: var(--gf-gray-15);
+  margin-bottom: var(--gf-spacing-5);
+}
+
+.gf-donation-summary__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--gf-spacing-5) 0;
+  font-size: var(--gf-font-size-3);
+}
+
+.gf-donation-summary__donation {
+  font-size: var(--gf-font-size-4);
+  font-weight: var(--gf-font-weight-normal);
+  color: var(--gf-text-accent-foreground);
+  line-height: 122%;
+}
+
+.gf-donation-summary__total {
+  font-size: var(--gf-font-size-6);
+  font-weight: var(--gf-font-weight-normal);
+  color: var(--gf-gray-15);
+  line-height: 122%;
+}
+
+.gf-donation-summary__separator {
+  background-color: var(--gf-border-primary);
+  border: none;
+  height: 1px;
+}
+
+.gf-donation-checkout__summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--gf-font-size-3);
+}
+
+.gf-donation-checkout__summary-row--total {
+  border-top: 1px solid var(--gf-gray-8);
+  margin-top: 8px;
+  padding-top: 16px;
+  font-weight: var(--gf-font-weight-semibold);
+  font-size: var(--gf-font-size-4);
+}
+
+/* Legal Text */
+.gf-donation-checkout__legal-text {
+  font-size: var(--gf-font-size-2);
+  color: var(--gf-gray-12);
+  line-height: 1.5;
+  margin-top: 16px;
+}
+
+.gf-donation-checkout__legal-text a {
+  color: var(--gf-blue-6);
+  text-decoration: underline;
+}
+
+.gf-donation-checkout__legal-text a:hover {
+  text-decoration: underline;
+}
+
+/* Form Builder Customizations */
+.gf-donation-checkout .gf-form-builder {
+  background: var(--gf-white);
+  border-radius: var(--gf-radius-4);
+  box-shadow: var(--gf-shadow-sm);
+  margin-top: var(--gf-spacing-8);
+}
+
+/* .gf-donation-checkout .gf-form-section {
+}
+
+.gf-donation-checkout .gf-form-section:last-child {
+  margin-bottom: 0;
+} */
+
+/* Dedicate checkbox wrapper styling */
+.gf-dedicate-checkbox-wrapper {
+  background: var(--gf-gray-1);
+  padding: var(--gf-spacing-5);
+  border-radius: var(--gf-radius-3);
+  border: 1px solid var(--gf-border-primary);
+  position: relative;
+}
+
+/* Tribute content animation - let JavaScript handle height calculations */
+/* Remove duplicate tribute content styles - they're handled in form-builder.css */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gf-donation-checkout {
+    padding: 16px;
+  }
+
+  .gf-donation-checkout__campaign-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gf-donation-checkout__amount-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gf-donation-checkout .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tribute Notification Fields */
+.gf-notification-field {
+  transition: all 0.3s ease;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.gf-notification-field.gf-ecard-fields,
+.gf-notification-field.gf-postmail-fields {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.gf-notification-field.gf-ecard-fields.show,
+.gf-notification-field.gf-postmail-fields.show {
+  opacity: 1;
+  max-height: 1000px;
+  overflow: visible;
+}
+
+.gf-field-hidden {
+  display: none !important;
+}
+
+/* Ensure proper spacing when notification fields are shown */
+.gf-notification-field.show {
+  margin-top: var(--gf-spacing-4);
+  margin-bottom: var(--gf-spacing-4);
+}
+
+/* Add proper spacing between notification field rows */
+.gf-notification-field .gf-form-row-half {
+  margin-bottom: var(--gf-spacing-4);
+}
+
+.gf-notification-field .gf-form-row-half:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure form fields within notification fields have proper spacing */
+.gf-notification-field .gf-form-field {
+  margin-bottom: var(--gf-spacing-3);
+}
+
+.gf-notification-field .gf-form-field:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure notification fields participate in form builder grid spacing */
+.gf-notification-field {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px; /* Match form-builder section gap */
+}
+
+/* Ensure notification field rows have proper spacing */
+.gf-notification-field > .gf-form-row-half {
+  margin-bottom: 12px; /* Match the gap */
+}
+
+.gf-notification-field > .gf-form-row-half:last-child {
+  margin-bottom: 0;
+}
+
+/* Fix vertical alignment in two-column layout */
+.gf-notification-field .gf-form-row-half {
+  align-items: start; /* Align items to the top */
+}
+
+.gf-notification-field .gf-form-row-half .gf-form-field {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+/* Ensure labels are aligned */
+.gf-notification-field .gf-form-row-half .gf-form-label {
+  height: auto;
+  line-height: 1.2;
+  margin-bottom: var(--gf-spacing-1-5);
+}
+
+/* Ensure inputs are aligned */
+.gf-notification-field .gf-form-row-half input,
+.gf-notification-field .gf-form-row-half textarea {
+  height: 40px;
+  max-height: 40px;
+  min-height: 40px; /* Consistent input height */
+  box-sizing: border-box;
+}
+
+/* Ensure form elements don't overflow their containers */
+.gf-form-builder {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gf-form-section {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure textarea and inputs don't overflow */
+.gf-textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: vertical; /* Only allow vertical resizing for textarea */
+}
+
+/* Ensure inputs maintain consistent height */
+.gf-input {
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  max-height: 40px;
+}
+
+/* Ensure textarea is properly contained within form sections */
+.gf-form-section .gf-textarea {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure notification fields don't cause overflow */
+.gf-notification-field {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure the personalized message textarea is properly sized */
+.gf-form-section .gf-textarea[name='tribute_message'] {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix for wrapper extension content cutoff */
+.gf-dedicate-checkbox-wrapper {
+  /* Ensure content is always visible when expanded */
+  min-height: auto;
+  height: auto;
+}
+
+/* Ensure tribute content is fully visible */
+.gf-tribute-content {
+  /* Override any conflicting height restrictions */
+  min-height: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* When tribute is hidden, use proper animation */
+.gf-tribute-content.gf-tribute-hidden {
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0;
+  transition: height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Ensure form fields within tribute content are always visible */
+.gf-tribute-content .gf-form-field {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  overflow: visible;
+}
+
+/* Fix for notification fields visibility */
+.gf-notification-field.show {
+  opacity: 1 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+/* Additional fixes for wrapper extension content cutoff */
+.gf-dedicate-checkbox-wrapper {
+  /* Ensure content is always visible when expanded */
+  min-height: auto;
+  height: auto;
+  /* Prevent any content from being hidden */
+  overflow: visible;
+}
+
+/* Ensure all form fields within the wrapper are visible */
+.gf-dedicate-checkbox-wrapper .gf-form-field {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  overflow: visible;
+}
+
+/* Override any hidden states from parent containers */
+.gf-dedicate-checkbox-wrapper .gf-form-field,
+.gf-dedicate-checkbox-wrapper .gf-form-field.gf-tribute-hidden,
+.gf-dedicate-checkbox-wrapper .gf-form-field.gf-field-hidden {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  overflow: visible;
+}
+
+/* Fix for notification field containers */
+.gf-notification-field {
+  /* Ensure proper width and prevent overflow */
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Ensure form rows within notification fields are properly sized */
+.gf-notification-field .gf-form-row-half {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Fix for textarea overflow issues */
+.gf-notification-field textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  resize: vertical;
+  overflow-x: hidden;
+}
+
+.gf-dedicate-checkbox-wrapper .gf-form-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Fix for tribute content visibility */
+.gf-tribute-content:not(.gf-tribute-hidden) {
+  /* Ensure content is fully visible when not hidden */
+  margin-top: var(--gf-spacing-6) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Ensure smooth transitions without content cutoff */
+.gf-tribute-content {
+  transition: height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}

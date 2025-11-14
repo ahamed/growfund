@@ -1,0 +1,96 @@
+.gf-page-container .gf-textarea {
+  width: 100%;
+  padding: var(--gf-spacing-3);
+  border: 1px solid var(--gf-gray-8);
+  border-radius: var(--gf-radius-3);
+  font-size: var(--gf-font-size-3);
+  line-height: 21px;
+  background-color: var(--gf-gray-1);
+  color: var(--gf-gray-16);
+  transition: all 0.2s ease;
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.gf-page-container .gf-textarea:focus {
+  outline: none;
+  border-color: var(--gf-blue-3);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.gf-page-container .gf-textarea::placeholder {
+  color: var(--gf-gray-12);
+  font-size: var(--gf-font-size-3);
+  line-height: 21px;
+}
+
+.gf-page-container .gf-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--gf-gray-4);
+}
+
+/* Textarea States */
+.gf-page-container .gf-textarea.gf-textarea--error {
+  border-color: var(--gf-red-6);
+}
+
+.gf-page-container .gf-textarea.gf-textarea--error:focus {
+  border-color: var(--gf-red-6);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.gf-page-container .gf-textarea.gf-textarea--success {
+  border-color: var(--gf-green-6);
+}
+
+.gf-page-container .gf-textarea.gf-textarea--success:focus {
+  border-color: var(--gf-green-6);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* Size Variants */
+.gf-page-container .gf-textarea--sm {
+  padding: var(--gf-spacing-1) var(--gf-spacing-3);
+  font-size: var(--gf-font-size-xs);
+  min-height: 80px;
+}
+
+.gf-page-container .gf-textarea--lg {
+  padding: var(--gf-spacing-3) var(--gf-spacing-5);
+  font-size: var(--gf-font-size-base);
+  min-height: 120px;
+}
+
+/* Height Variants */
+.gf-page-container .gf-textarea--xs {
+  min-height: 60px;
+}
+
+.gf-page-container .gf-textarea--xl {
+  min-height: 150px;
+}
+
+/* Disable resize */
+.gf-page-container .gf-textarea--no-resize {
+  resize: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+  .gf-page-container .gf-textarea {
+    font-size: var(--gf-font-size-4);
+    padding: var(--gf-spacing-4);
+  }
+
+  .gf-page-container .gf-textarea--sm {
+    padding: var(--gf-spacing-2) var(--gf-spacing-4);
+    font-size: var(--gf-font-size-3);
+  }
+
+  .gf-page-container .gf-textarea--lg {
+    padding: var(--gf-spacing-4) var(--gf-spacing-6);
+    font-size: var(--gf-font-size-5);
+  }
+}

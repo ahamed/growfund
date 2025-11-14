@@ -1,0 +1,301 @@
+/* =========================================
+   CHECKOUT COMPONENT STYLES
+   ========================================= */
+
+.gf-main-container {
+  max-width: var(--gf-max-width);
+  margin: 0 auto;
+  padding: var(--gf-spacing-16) 0;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--gf-spacing-10);
+  align-items: flex-start;
+}
+.gf-reward-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gf-spacing-8);
+  min-width: 0;
+}
+.gf-reward-column {
+  border-radius: var(--gf-radius-6);
+  border: 1px solid var(--gf-gray-8);
+  padding: var(--gf-spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gf-spacing-8);
+}
+.gf-sidebar {
+  border-radius: var(--gf-radius-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gf-spacing-8);
+}
+
+.gf-form-builder-card {
+  padding: var(--gf-spacing-6);
+  border-radius: var(--gf-radius-4);
+}
+
+/* Prevent form sections from being scrollable */
+.gf-form-builder-card .gf-form-section {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+/* Specifically prevent shipping address section from being scrollable */
+.gf-form-builder-card .gf-form-section {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+/* Target shipping address section by its title text */
+.gf-form-builder-card .gf-form-section h2.gf-form-title {
+  overflow: visible;
+}
+
+/* Ensure all form fields are visible and not scrollable */
+.gf-form-builder-card .gf-form-field {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+/* Prevent any overflow issues in form groups */
+.gf-form-builder-card .gf-form-section .gf-form-row-half {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+/* Additional rules to prevent scrollable behavior */
+.gf-form-builder-card .gf-form-section,
+.gf-form-builder-card .gf-form-section * {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+/* Ensure dropdowns and inputs don't cause scrollable behavior */
+.gf-form-builder-card .gf-dropdown,
+.gf-form-builder-card .gf-textarea {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+/* Maintain input height constraints while allowing overflow visibility */
+.gf-form-builder-card .gf-input {
+  overflow: visible;
+  height: 40px;
+  max-height: 40px;
+  box-sizing: border-box;
+}
+
+/* Specific targeting for shipping address section using the new class */
+.gf-shipping-address-section {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+.gf-shipping-address-section * {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+/* Ensure shipping address form fields are not scrollable */
+.gf-shipping-address-section .gf-form-field {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+.gf-shipping-address-section .gf-form-row-half {
+  overflow: visible;
+  max-height: none;
+  height: auto;
+}
+
+.gf-checkout-header {
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-5);
+  max-width: var(--gf-max-width);
+}
+
+.gf-back-button-wrapper {
+  width: var(--gf-spacing-11);
+  height: var(--gf-spacing-11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gf-section-title {
+  font-size: var(--gf-font-size-8);
+  font-weight: var(--gf-font-weight-bold);
+  margin: 0;
+  color: var(--gf-gray-16);
+  flex: 1;
+}
+
+.gf-form-builder-footer-text {
+  font-size: var(--gf-font-size-3);
+  color: var(--gf-accent-dark);
+  line-height: 21px;
+  margin-top: var(--gf-spacing-4);
+}
+
+.gf-guarantee-section {
+  background: var(--gf-gray-2);
+  border-radius: var(--gf-radius-4);
+  border: 1px solid var(--gf-gray-6);
+  padding: var(--gf-spacing-5) var(--gf-spacing-4);
+}
+.gf-guarantee-header {
+  display: flex;
+  align-items: center;
+  gap: var(--gf-spacing-2);
+  margin-bottom: var(--gf-spacing-2);
+}
+.gf-guarantee-icon {
+  font-size: var(--gf-font-size-6);
+}
+.gf-guarantee-title {
+  font-size: var(--gf-font-size-5);
+  font-weight: var(--gf-font-weight-semibold);
+  color: var(--gf-gray-15);
+}
+.gf-guarantee-text {
+  font-size: var(--gf-font-size-3);
+  color: var(--gf-gray-15);
+  line-height: 21px;
+  margin-bottom: var(--gf-spacing-2);
+  padding-left: var(--gf-spacing-8);
+}
+.gf-guarantee-link {
+  color: var(--gf-green-5);
+  text-decoration: none;
+  font-size: var(--gf-font-size-3);
+  padding-left: var(--gf-spacing-8);
+}
+.gf-guarantee-link:hover {
+  text-decoration: underline;
+}
+.gf-faq-section {
+  border: 1px solid var(--gf-gray-6);
+  border-radius: var(--gf-radius-4);
+  padding: var(--gf-spacing-6);
+  background: var(--gf-gray-2);
+}
+.gf-faq-section-title {
+  font-size: var(--gf-font-size-5);
+  font-weight: var(--gf-font-weight-semibold);
+  line-height: 24px;
+  color: var(--gf-gray-15);
+  margin-bottom: var(--gf-spacing-8);
+}
+.gf-info-section {
+  background: var(--gf-gray-2);
+  border-radius: var(--gf-radius-4);
+  padding: var(--gf-spacing-6);
+}
+.gf-info-text {
+  font-size: var(--gf-font-size-3);
+  color: var(--gf-gray-13);
+  line-height: 21px;
+  margin-bottom: var(--gf-spacing-2);
+}
+.gf-info-text:last-child {
+  margin-bottom: 0;
+}
+.gf-email-highlight {
+  font-weight: var(--gf-font-weight-semibold);
+  color: var(--gf-gray-16);
+}
+.gf-main-container .gf-faq-question {
+  font-size: var(--gf-font-size-3);
+}
+.gf-main-container .gf-faq-answer-content p {
+  font-size: var(--gf-font-size-3);
+}
+
+/* =========================================
+   SHIPPING CALCULATION STYLES
+   ========================================= */
+
+.gf-country-calculating {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.gf-shipping-message {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gf-message-error {
+  background-color: #f8d7da !important;
+  color: #721c24 !important;
+  border: 1px solid #f5c6cb !important;
+}
+
+@media (max-width: 1023px) {
+  .gf-main-container {
+    grid-template-columns: 1fr;
+    gap: var(--gf-spacing-6);
+    padding: var(--gf-spacing-3) var(--gf-spacing-4) 0;
+  }
+  .gf-reward-wrapper {
+    order: 1;
+    gap: var(--gf-spacing-6);
+  }
+
+  .gf-info-section {
+    padding: var(--gf-spacing-4);
+  }
+
+  .gf-form-builder-card {
+    padding: var(--gf-spacing-4);
+  }
+  .gf-sidebar {
+    order: 2;
+    max-width: 100%;
+    padding: var(--gf-spacing-5) var(--gf-spacing-2);
+  }
+  .gf-reward-column {
+    padding: var(--gf-spacing-4);
+  }
+  .gf-checkout-header {
+    gap: var(--gf-spacing-4);
+  }
+  .gf-section-title {
+    font-size: var(--gf-font-size-8);
+    line-height: 32px;
+    font-weight: var(--gf-font-weight-semibold);
+  }
+
+  .gf-form-builder-footer-text {
+    font-size: var(--gf-font-size-2);
+    line-height: 18px;
+  }
+
+  .gf-guarantee-section {
+    padding: var(--gf-spacing-4);
+  }
+}
