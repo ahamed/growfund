@@ -1,0 +1,83 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-all padding="0" />
+      <mj-all font-family="Inter, sans-serif" />
+      <mj-all font-size="16px" />
+      <mj-all line-height="1.5" />
+      <mj-all color="#333333" />
+      <mj-all font-weight="normal" />
+      <mj-all text-decoration="none" />
+      <mj-all letter-spacing="0%" />
+    </mj-attributes>
+    <mj-style>
+      p {
+        margin: 0;
+        padding: 4px 0;
+        line-height: 1.5;
+        font-size: 16px;
+        color: #333333;
+        font-weight: normal;
+        text-decoration: none;
+        letter-spacing: 0%;
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#f4f4f5" width="560px">
+    <mj-wrapper padding-top="32px" padding-bottom="32px">
+      <!-- Header -->
+      <mj-section background-color="#ffffff" border-radius="8px 8px 0 0" border-bottom="1px solid #e6e6e6" padding="24px 64px">
+        <mj-column width="100%">
+          <mj-image src="https://growfund.com/wp-content/themes/fundify/images/logo.svg" height="20px" alt="Banner Image" width="150px" align="center" />
+        </mj-column>
+      </mj-section>
+
+      <!-- Body:heading -->
+      <mj-section background-color="#ffffff" padding="24px 64px">
+        <mj-column>
+          <mj-text font-size="24px" color="#338C58">Reward has been delivered successfully.</mj-text>
+        </mj-column>
+      </mj-section>
+
+      <!-- Body:content -->
+
+
+      <mj-section background-color="#ffffff" padding="24px 64px">
+        <mj-column>
+          <mj-text>
+            <p>Dear [Customer Name],</p>
+            <p>We are pleased to inform you that your reward has been delivered successfully.</p>
+            <p>Thank you for your support!</p>
+            <p>In you have any questions about your donations, please contact us at <a href="mailto:support@cf.com">support@cf.com</a></p>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+
+
+
+      <!-- Body:additional -->
+      <mj-section background-color="#ffffff" padding="24px 64px">
+        <mj-column>
+          <mj-text>
+            <p>With Gratitude,</p>
+            <p>The Growfund Team</p>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <!-- Footer -->
+      <mj-section background-color="#ffffff" border-radius="0 0 8px 8px" border-top="1px solid #e6e6e6" text-align="center" padding="24px 64px">
+        <mj-column>
+          <mj-text align="center">
+            www.cf.com &copy; 2025 All Rights Reserved.
+            <br>
+            <a href="https://cf.com" target="_blank">Terms & Conditions</a>
+            .
+            <a href="https://cf.com" target="_blank">Privacy Policy</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>

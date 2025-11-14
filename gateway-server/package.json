@@ -1,0 +1,42 @@
+{
+  "name": "zip-file-server",
+  "version": "1.0.0",
+  "description": "A simple Node.js server for storing and serving zip files",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "build:gateways": "ts-node build-gateways.ts",
+    "sync:gateways": "ts-node sync-gateways.ts",
+    "sync:gateways:once": "ts-node sync-gateways.ts once",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "dev:watch": "nodemon --exec ts-node src/server.ts",
+    "dev:full": "concurrently \"npm run dev:watch\" \"npm run sync:gateways\"",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "file-server",
+    "zip",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.3",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}
